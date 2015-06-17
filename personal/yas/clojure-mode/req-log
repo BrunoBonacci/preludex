@@ -1,0 +1,3 @@
+#name: req-log
+# --
+(:require [taoensso.timbre :as log])

@@ -1,0 +1,3 @@
+#name: req-s
+# --
+(:require [clojure.string :as s])

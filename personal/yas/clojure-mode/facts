@@ -1,0 +1,9 @@
+#name: facts
+# --
+(facts "about \`${myfunc}\`"
+
+  ;; assertion                       expected result
+  (s/split "a/b/c" #"/")      =>     ["a" "b" "c"]
+  (s/split "a/b/c" #"/")     =not=>  ["X" "Y" "Z"]
+  "This  is  powerful"        =>     #"is\s+power"
+)

@@ -1,0 +1,12 @@
+#name: facts-tab
+# --
+(tabular
+   (fact "about \`${myfunc}\`"
+
+     (s/split ?souce  ?regex)    =>     ?result )
+
+   ?source            ?regex   ?arrow   ?result
+   "a/b/c"            #"/"       =>     ["a" "b" "c"]
+   "a/b/c"            #"/"     =not=>   ["X" "Y" "Z"]
+
+)
