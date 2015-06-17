@@ -45,6 +45,20 @@
 
 
 ;;
+;; Custom YAS snippets
+;;
+;; load custom yas snippets
+(prelude-require-packages '(yasnippet clojure-snippets datomic-snippets
+                                      java-snippets pig-snippets))
+(setq yas-snippet-dirs
+      (list  (or (concat (file-name-directory load-file-name) "yas")
+                 "~/.yas")))
+(require 'yasnippet)
+(yas-global-mode 1)
+
+
+
+;;
 ;; .TODO.org
 ;;
 ;; automatically open .TODO.org scripts at startup
