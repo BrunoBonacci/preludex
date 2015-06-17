@@ -56,6 +56,10 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;; Disable YAS autocompletion for Terminal Mode
+(add-hook 'term-mode-hook (lambda()
+                            (setq yas-dont-activate t)))
+
 
 
 ;;
@@ -78,3 +82,9 @@
     (append-to-file default-message nil "~/.TODO.org"))
 ;; open all existing ones
 (mapcar 'find-file  (directory-files "~/" t "^.TODO.*.org"))
+
+
+;;
+;; Disable tabs and uses sapces instead
+;;
+(setq-default indent-tabs-mode nil)
