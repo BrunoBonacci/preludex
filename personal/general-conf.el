@@ -9,6 +9,11 @@
 (setq windmove-wrap-around t )
 
 ;;
+;; Disable guru warnings
+;;
+(setq prelude-guru nil)
+
+;;
 ;; Install solarized theme
 ;;
 ;; this necessary for the first time to install missing packages if
