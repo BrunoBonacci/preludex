@@ -1,10 +1,10 @@
-;;; prodigy installation
+;;; elfeed installation
 
 (prelude-require-packages '(elfeed))
 (require 'elfeed)
 
 ;;
-;; if a .prodigy exists load it
+;; if a .elfeed.el exists load it
 ;;
 (if (file-exists-p "~/.feeds.el")
     (load "~/.feeds.el"))
