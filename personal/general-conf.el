@@ -25,9 +25,9 @@
 (set-face-attribute 'default nil :height 140)
 ;; hightlight modeline of active buffer
 (set-face-foreground 'mode-line "black")
-(set-face-background 'mode-line "green3")
+(set-face-background 'mode-line "green4")
 (set-face-background 'modeline-inactive "grey20")
-
+(set-face-foreground 'mode-line-buffer-id "white")
 
 ;;
 ;; Global revert
@@ -104,3 +104,20 @@
 (require 'cua-rect)
 (cua-mode 1)
 (setq cua-enable-cua-keys nil)
+
+
+
+;;
+;; delete space but one like emacs-live
+;;
+(defun live-delete-whitespace-except-one ()
+  (interactive)
+  (just-one-space -1))
+(global-set-key (kbd "M-SPC ") 'live-delete-whitespace-except-one)
+
+
+
+;;
+;; magit warning
+;;
+(setq magit-last-seen-setup-instructions "1.4.0")
