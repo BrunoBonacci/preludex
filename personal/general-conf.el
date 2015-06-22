@@ -29,6 +29,10 @@
 (set-face-background 'modeline-inactive "grey20")
 (set-face-foreground 'mode-line-buffer-id "white")
 
+;; disable scroll bars
+(toggle-scroll-bar -1)
+
+
 ;;
 ;; Global revert
 ;;

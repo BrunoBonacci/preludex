@@ -11,3 +11,6 @@
 (set-face-background 'mode-line "green4")
 (set-face-background 'modeline-inactive "grey20")
 (set-face-foreground 'mode-line-buffer-id "white")
+
+;; disable scroll bars
+(toggle-scroll-bar -1)
