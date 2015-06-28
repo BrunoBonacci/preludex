@@ -20,7 +20,7 @@
 ;; you change things here remember to apply them to
 ;; `personal/preload/theme.el` as well
 (prelude-require-packages '(color-theme-sanityinc-solarized solarized-theme))
-(load-theme 'sanityinc-solarized-dark)
+(load-theme 'sanityinc-solarized-dark t)
 (setq prelude-theme 'sanityinc-solarized-dark)
 ;; change default font size
 (set-face-attribute 'default nil :height 140)
