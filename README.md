@@ -114,41 +114,10 @@ Simply run <kbd>M-x prelude-update</kbd> from Emacs itself and restart Emacs aft
 
 ## Enabling additional modules
 
-By default most of the modules that ship with Prelude are not loaded. For more information on the functionality provided by these modules visit the [docs](modules/doc/README.md).
+By default I've installed and enabled modules which are common for
+Clojure development and Ruby development.
 
-```lisp
-;;; Uncomment the modules you'd like to use and restart Prelude afterwards
-
-(require 'prelude-c)
-;; (require 'prelude-clojure)
-;; (require 'prelude-coffee)
-;; (require 'prelude-common-lisp)
-;; (require 'prelude-css)
-(require 'prelude-emacs-lisp)
-(require 'prelude-erc)
-;; (require 'prelude-erlang)
-;; (require 'prelude-elixir)
-;; (require 'prelude-haskell)
-(require 'prelude-js)
-;; (require 'prelude-latex)
-(require 'prelude-lisp)
-;; (require 'prelude-mediawiki)
-(require 'prelude-org)
-(require 'prelude-perl)
-;; (require 'prelude-python)
-;; (require 'prelude-ruby)
-;; (require 'prelude-scala)
-(require 'prelude-scheme)
-;; (require 'prelude-scss)
-;; (require 'prelude-web)
-(require 'prelude-xml)
-```
-
-You'll need to adjust your `prelude-modules.el` file once the
-installation is done. If you are doing a manual install then you first
-need to copy the `prelude-modules.el` available in the sample
-directory to the root of `path/to/prelude/installation` and then
-adjust that one.
+If you want to add more modules please uncomment them into `prelude-modules.el`.
 
 After you've uncommented a module you should either restart Emacs or evaluate the module
 `require` expression with <kbd>C-x C-e</kbd>.
@@ -190,6 +159,78 @@ emacsclient somefile:1234
 ```
 
 This will open file 'somefile' and set cursor on line 1234.
+
+## My customizations on top of Prelude
+
+* Theme - using 'solarized-dark' from Sanityinc with little improvements
+  for readability.
+
+* No scroll bars key-bindings are better way to navigate a file
+* Global-auto-revert enabled to make sure that files in the editor
+  are always aligned with the files on disk.
+* Dired copy across split screens
+* Custom Yasnippet
+* automatic opening of `.org` files in your $HOME directory
+* Use spaces instead of TAB
+* Font locking for Clojure symbols like: λ, ƒ, ∈ ... etc
+* [Paredit](http://emacswiki.org/emacs/ParEdit) for Clojure development
+* [Elfeed](https://github.com/skeeto/elfeed) for consuming RSS/Atom feeds.
+  You can add your own feeds to consume by create a file called `.feeds.el` in
+  your home direcotry. The file should have the following format
+  ```lisp
+  ;;; feeds to consume
+  (setq elfeed-feeds
+      '("http://nullprogram.com/feed/"
+        "http://www.terminally-incoherent.com/blog/feed/"))
+
+  ```
+* [Prodigy](https://github.com/rejeep/prodigy.el) for start/stop local services.
+  Prodigy is an excellent tool for managing local services. Very useful when you
+  have to start several services for development purposes. You can add you own
+  configuration in a file called `.prodigy.el` in your home directory. The file
+  should look like this:
+  ```lisp
+  ;; create prodigy configurtion
+
+  (require 'prodigy)
+
+  ;; reset status
+  (setq prodigy-services '())
+
+  ;; add a service
+  (prodigy-define-service
+    :name "Python app"
+    :command "python"
+    :args '("-m" "SimpleHTTPServer" "6001")
+    :cwd "/path/to/my/project"
+    :tags '(work)
+    :kill-signal 'sigkill
+    :kill-process-buffer-on-stop t)
+  ```
+* [Restclient](https://github.com/pashky/restclient.el) really rocks!!
+
+Here the key bindings added:
+
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+<kbd>C-RET</kbd>   | Rectangle selection
+<kbd>M-SPC</kbd>   | Delete whitespace except one
+<kbd>M-s-left</kbd> | Move between windows like in shell's panels
+<kbd>M-s-right</kbd>|                    "
+<kbd>M-s-up</kbd>   |                    "
+<kbd>M-s-down</kbd> |                    "
+shell <kbd>up</kbd>   | More natural up/down behaviour in REPL to load previous/next command
+shell <kbd>down</kbd> | More natural up/down behaviour in REPL to load previous/next command
+REPL <kbd>up</kbd>   | More natural up/down behaviour in REPL to load previous/next command
+REPL <kbd>down</kbd> | More natural up/down behaviour in REPL to load previous/next command
+Clojure <kbd>C-S-d</kbd> | Duplicate next `sexp`
+Clojure <kbd>C-S-c</kbd> | Copy next `sexp`
+Clojure <kbd>C-S-k</kbd> | Kill/Delete next `sexp`
+<kbd>C-x w</kbd> | Start [Elfeed](https://github.com/skeeto/elfeed)
+<kbd>C-x p</kbd> | Start [Prodigy](https://github.com/rejeep/prodigy.el)
+<kbd>C-/</kbd>   | Jump to dired with focus on current file.
+
+
 
 ## Getting to know Prelude
 
