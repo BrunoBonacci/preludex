@@ -22,10 +22,6 @@ advised to always run Prelude with the latest Emacs - currently
 
 - [Installing Emacs 24](#installing-emacs-24)
 - [Installation](#installation)
-    - [Automated](#automated)
-        - [Via Curl](#via-curl)
-        - [Via Wget](#via-wget)
-    - [Manual](#manual)
 - [Updating Prelude](#updating-prelude)
     - [Manual update](#manual-update)
         - [Update all bundled packages](#update-all-bundled-packages)
@@ -73,16 +69,16 @@ first.
 
 ## Installation
 
-
-#### Via Curl
-
-If you're using `curl` type the following command:
+The easiest way to install it is as folllow:
 
 ```bash
 # backup installation
 mv ~/.emacs.d ~/.emacs.d.`date +%s`
+# then clone the repo
 git clone https://github.com/BrunoBonacci/my-new-emacs.git ~/.emacs.d
 ```
+Upon the first start it is going to download and compile all require modules,
+expect this to last 1-2 minutes. Subsequent start will be very fast.
 
 If you are using Windows, you should check what Emacs thinks the `~` directory is by running Emacs and typing `C-x d ~/<RET>`, and then adjust the command appropriately.
 
