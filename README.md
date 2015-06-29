@@ -211,24 +211,24 @@ This will open file 'somefile' and set cursor on line 1234.
 
 Here the key bindings added:
 
-Keybinding         | Description
--------------------|------------------------------------------------------------
-<kbd>C-RET</kbd>   | Rectangle selection
-<kbd>M-SPC</kbd>   | Delete whitespace except one
+Keybinding          | Description
+--------------------|------------------------------------------------------------
+<kbd>C-RET</kbd>    | Rectangle selection
+<kbd>M-SPC</kbd>    | Delete whitespace except one
 <kbd>M-s-left</kbd> | Move between windows like in shell's panels
 <kbd>M-s-right</kbd>|                    "
 <kbd>M-s-up</kbd>   |                    "
 <kbd>M-s-down</kbd> |                    "
 shell <kbd>up</kbd>   | More natural up/down behaviour in REPL to load previous/next command
 shell <kbd>down</kbd> | More natural up/down behaviour in REPL to load previous/next command
-REPL <kbd>up</kbd>   | More natural up/down behaviour in REPL to load previous/next command
-REPL <kbd>down</kbd> | More natural up/down behaviour in REPL to load previous/next command
+REPL <kbd>up</kbd>    | More natural up/down behaviour in REPL to load previous/next command
+REPL <kbd>down</kbd>  | More natural up/down behaviour in REPL to load previous/next command
 Clojure <kbd>C-S-d</kbd> | Duplicate next `sexp`
 Clojure <kbd>C-S-c</kbd> | Copy next `sexp`
 Clojure <kbd>C-S-k</kbd> | Kill/Delete next `sexp`
-<kbd>C-x w</kbd> | Start [Elfeed](https://github.com/skeeto/elfeed)
-<kbd>C-x p</kbd> | Start [Prodigy](https://github.com/rejeep/prodigy.el)
-<kbd>C-/</kbd>   | Jump to dired with focus on current file.
+<kbd>C-x w</kbd>      | Start [Elfeed](https://github.com/skeeto/elfeed)
+<kbd>C-x p</kbd>      | Start [Prodigy](https://github.com/rejeep/prodigy.el)
+<kbd>C-x C-/</kbd>    | Jump to dired with focus on current file.
 
 
 
