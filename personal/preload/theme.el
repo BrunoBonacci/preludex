@@ -16,4 +16,7 @@
 (set-face-foreground 'mode-line-buffer-id "white")
 
 ;; disable scroll bars
-(toggle-scroll-bar -1)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
