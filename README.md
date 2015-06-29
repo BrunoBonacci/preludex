@@ -4,7 +4,7 @@
 My custom Emacs Prelude
 =======================
 
-This is a fork of the popular Emacs Prelude with customizations
+This is a fork of the popular [Emacs Prelude](https://github.com/bbatsov/prelude) with customizations
 for Clojure development.
 
 Prelude is an Emacs distribution that aims to enhance the default
@@ -30,6 +30,7 @@ advised to always run Prelude with the latest Emacs - currently
     - [Automatic update](#automatic-update)
 - [Enabling additional modules](#enabling-additional-modules)
 - [Running](#running)
+- [My customizations on top of Prelude](#my-customizations-on-top-of-prelude)
 - [Getting to know Prelude](#getting-to-know-prelude)
     - [Keymap](#keymap)
         - [Global](#global)
@@ -53,10 +54,9 @@ advised to always run Prelude with the latest Emacs - currently
     - [Customized C-a behavior](#customized-c-a-behavior)
     - [Poor ido matching performance on large datasets](#poor-ido-matching-performance-on-large-datasets)
     - [Windows compatibility](#windows-compatibility)
-- [Known issues](#known-issues)
 - [Support](#support)
-- [Contributors](#contributors)
-- [Bugs & Improvements](#bugs--improvements)
+- [License](#License)
+
 
 
 ## Installing Emacs 24
@@ -652,34 +652,19 @@ While everything in Prelude should work fine in Windows, I test it only
 with Linux & OSX, so there are Windows related problems from time to
 time. This situation will probably improve over time.
 
-## Known issues
+## Support
+
+Support is available via the Prelude Google Group <emacs-prelude@googlegroups.com>.
+There's also a Freenode channel you can visit - `#prelude-emacs`.
 
 Check out the project's
 [issue list](https://github.com/bbatsov/prelude/issues?sort=created&direction=desc&state=open)
 a list of unresolved issues. By the way - feel free to fix any of them
 and send me a pull request. :-)
 
-## Support
+## License
 
-Support is available via the Prelude Google Group <emacs-prelude@googlegroups.com>.
-
-There's also a Freenode channel you can visit - `#prelude-emacs`.
-
-## Contributors
-
-Here's a [list](https://github.com/bbatsov/prelude/contributors) of all the people who have contributed to the
-development of Emacs Prelude.
-
-## Bugs & Improvements
-
-Bug reports and suggestions for improvements are always
-welcome. GitHub pull requests are even better! :-)
-
-I'm also accepting financial contributions via [gittip](https://www.gittip.com/bbatsov).
-
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/bbatsov)
-
-Cheers,<br/>
-[Bozhidar](https://twitter.com/bbatsov)
+Emacs Prelude is developed by [Bozhidar](https://twitter.com/bbatsov)
+And my customizations are developed by [Bruno Bonacci](https://twitter.com/BrunoBonacci)
 
 [badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
