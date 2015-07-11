@@ -231,6 +231,9 @@ Clojure <kbd>C-;</kbd>| Send `sexp` to the REPL
 <kbd>C-x p</kbd>      | Start [Prodigy](https://github.com/rejeep/prodigy.el)
 <kbd>C-x C-/</kbd>    | Jump to dired with focus on current file.
 Rest <kbd>C-c C-v</kbd> | Send request at point and show result in popup
+<kbd>C-c t</kbd>      | Open terminal
+<kbd>C-c p p</kbd>    | Open known projects
+<kbd>C-c p s g</kbd>  | Search in current project
 
 
 
