@@ -184,3 +184,23 @@
 
 (eval-after-load "paredit"
   '(progn (define-key paredit-mode-map (kbd "C-S-k") 'paredit-kill-after-point)))
+
+
+;;
+;; This sends a sexp to the REPL buffer
+;; credits: http://timothypratley.blogspot.co.uk/2015/07/seven-specialty-emacs-settings-with-big.html
+;;
+(defun cider-eval-expression-at-point-in-repl ()
+  (interactive)
+  (let ((form (cider-defun-at-point)))
+    ;; Strip excess whitespace
+    (while (string-match "\\`\s+\\|\n+\\'" form)
+      (setq form (replace-match "" t t form)))
+    (set-buffer (cider-get-repl-buffer))
+    (goto-char (point-max))
+    (insert form)
+    (cider-repl-return)))
+
+(require 'cider-mode)
+(define-key cider-mode-map
+  (kbd "C-;") 'cider-eval-expression-at-point-in-repl)
