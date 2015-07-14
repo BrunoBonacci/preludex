@@ -1,14 +1,6 @@
 ;;;; Customization for Clojure-cider mode
 
 ;;
-;; Install clojure-cheatsheet for emacs
-;;
-(prelude-require-package 'clojure-cheatsheet)
-(define-key cider-mode-map
-  (kbd "C-c C-s") 'clojure-cheatsheet)
-
-
-;;
 ;; Install and activate paredit
 ;;
 (prelude-require-packages '(paredit))
@@ -228,3 +220,11 @@
 
 (define-key cider-mode-map
   (kbd "C-;") 'cider-eval-last-expression-in-repl)
+
+
+;;
+;; Install clojure-cheatsheet for emacs
+;;
+(prelude-require-package 'clojure-cheatsheet)
+(define-key cider-mode-map
+  (kbd "C-c C-s") 'clojure-cheatsheet)
