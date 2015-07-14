@@ -226,7 +226,8 @@ REPL <kbd>down</kbd>  | More natural up/down behaviour in REPL to load previous/
 Clojure <kbd>C-S-d</kbd> | Duplicate next `sexp`
 Clojure <kbd>C-S-c</kbd> | Copy next `sexp`
 Clojure <kbd>C-S-k</kbd> | Kill/Delete next `sexp`
-Clojure <kbd>C-;</kbd>| Send `sexp` to the REPL
+Clojure <kbd>C-;</kbd>| Send last `sexp` to the REPL and evaluate it
+Clojure <kbd>C-M-;</kbd>| Send top level `sexp` to the REPL and evaluate it
 <kbd>C-x w</kbd>      | Start [Elfeed](https://github.com/skeeto/elfeed)
 <kbd>C-x p</kbd>      | Start [Prodigy](https://github.com/rejeep/prodigy.el)
 <kbd>C-x C-/</kbd>    | Jump to dired with focus on current file.
