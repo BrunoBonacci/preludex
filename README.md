@@ -208,6 +208,7 @@ This will open file 'somefile' and set cursor on line 1234.
     :kill-process-buffer-on-stop t)
   ```
 * [Restclient](https://github.com/pashky/restclient.el) really rocks!!
+* [Clojure cheatsheet](https://github.com/clojure-emacs/clojure-cheatsheet)
 
 Here the key bindings added:
 
