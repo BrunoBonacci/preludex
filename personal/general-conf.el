@@ -21,7 +21,7 @@
 ;; `personal/preload/theme.el` as well
 (prelude-require-packages '(color-theme-sanityinc-solarized solarized-theme))
 (load-theme 'sanityinc-solarized-dark t)
-(setq prelude-theme 'sanityinc-solarized-dark)
+(setq prelude-theme 'solarized-dark)
 ;; change default font size
 (set-face-attribute 'default nil :height 140)
 ;; hightlight modeline of active buffer
