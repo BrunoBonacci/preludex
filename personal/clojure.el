@@ -1,7 +1,16 @@
 ;;;; Customization for Clojure-cider mode
 
+;;
+;; Install clojure-cheatsheet for emacs
+;;
+(prelude-require-package 'clojure-cheatsheet)
+(define-key cider-mode-map
+  (kbd "C-c C-s") 'clojure-cheatsheet)
 
+
+;;
 ;; Install and activate paredit
+;;
 (prelude-require-packages '(paredit))
 (autoload 'enable-paredit-mode "paredit"
   "Turn on pseudo-structural editing of Lisp code." t)
