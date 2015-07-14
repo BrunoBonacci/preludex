@@ -3,8 +3,9 @@
 (disable-theme 'zenburn)
 (setq prelude-theme nil)
 
-;;(if (require 'color-theme-sanityinc-solarized nil 'noerror)
-;;  (setq prelude-theme 'sanityinc-solarized-dark)
+
+;;(if (require 'solarized-theme nil 'noerror)
+;;  (setq prelude-theme 'solarized-dark)
 ;;  (setq prelude-theme nil))
 
 
