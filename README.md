@@ -1,11 +1,12 @@
 [![License GPL 3][badge-license]](http://www.gnu.org/licenses/gpl-3.0.txt)
 [![Gratipay](http://img.shields.io/gratipay/bbatsov.svg)](https://gratipay.com/bbatsov/)
 
-My custom Emacs Prelude
-=======================
+PreludeX => Emacs Prelude Extended
+==================================
 
-This is a fork of the popular [Emacs Prelude](https://github.com/bbatsov/prelude) with customizations
-for Clojure development.
+This is a fork of the popular
+[Emacs Prelude](https://github.com/bbatsov/prelude) with
+customizations and extensions for Clojure development.
 
 Prelude is an Emacs distribution that aims to enhance the default
 Emacs experience.  Prelude alters a lot of the default settings,
@@ -75,7 +76,7 @@ The easiest way to install it is as folllow:
 # backup installation
 mv ~/.emacs.d ~/.emacs.d.`date +%s`
 # then clone the repo
-git clone https://github.com/BrunoBonacci/my-new-emacs.git ~/.emacs.d
+git clone https://github.com/BrunoBonacci/preludex.git ~/.emacs.d
 ```
 Upon the first start it is going to download and compile all require modules,
 expect this to last 1-2 minutes. Subsequent start will be very fast.
