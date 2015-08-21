@@ -232,7 +232,7 @@ Clojure <kbd>C-S-k</kbd> | Kill/Delete next `sexp`
 Clojure <kbd>C-;</kbd>| Send last `sexp` to the REPL and evaluate it
 Clojure <kbd>C-M-;</kbd>| Send top level `sexp` to the REPL and evaluate it
 Clojure <kbd>C-c C-s</kbd>| Open interactive Clojure cheatsheet
-Clojure <kbd>C-c C-r <refactor-keys></kbd> | Execute the specified refactoring [see list](https://github.com/clojure-emacs/clj-refactor.el/wiki)
+Clojure <kbd>C-c C-r *refactor-keys*</kbd> | Execute the specified refactoring [see list](https://github.com/clojure-emacs/clj-refactor.el/wiki)
 <kbd>C-x w</kbd>      | Start [Elfeed](https://github.com/skeeto/elfeed)
 <kbd>C-x p</kbd>      | Start [Prodigy](https://github.com/rejeep/prodigy.el)
 <kbd>C-x C-/</kbd>    | Jump to dired with focus on current file.
