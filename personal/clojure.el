@@ -191,6 +191,7 @@
 ;; This sends a sexp to the REPL buffer
 ;; credits: http://timothypratley.blogspot.co.uk/2015/07/seven-specialty-emacs-settings-with-big.html
 ;;
+(prelude-require-package 'cider)
 (require 'cider-mode)
 (defun cider-eval-expression-at-point-in-repl ()
   (interactive)
