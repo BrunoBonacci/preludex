@@ -208,7 +208,7 @@ This will open file 'somefile' and set cursor on line 1234.
     :kill-signal 'sigkill
     :kill-process-buffer-on-stop t)
   ```
-* [Restclient](https://github.com/pashky/restclient.el) really rocks!!
+* [Restclient](https://github.com/pashky/restclient.el) really rocks!! even better with [company-restclient](https://github.com/iquiw/company-restclient)
 * [Clojure cheatsheet](https://github.com/clojure-emacs/clojure-cheatsheet)
 * [Clojure refactor](https://github.com/clojure-emacs/clj-refactor.el)
 
