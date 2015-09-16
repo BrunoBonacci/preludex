@@ -130,3 +130,9 @@
 ;;
 (setq magit-last-seen-setup-instructions "2.1.0")
 (setq magit-push-always-verify nil)
+
+
+;;
+;; ERC - irc
+;;
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
