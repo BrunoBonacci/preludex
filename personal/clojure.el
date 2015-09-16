@@ -242,3 +242,11 @@
   )
 
 (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
+
+;;
+;; Error buffer
+;;
+(setq cider-auto-select-error-buffer nil)
+(setq cider-show-error-buffer nil)
+(define-key cider-mode-map
+  (kbd "C-c e") 'cider-visit-error-buffer)
