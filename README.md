@@ -435,6 +435,7 @@ Keybinding         | Description
 <kbd>YY</kbd>      | Browse the kill ring(`browse-kill-ring`)
 <kbd>WS</kbd>      | Save frameset to register (same as <kbd>C-x r f</kbd>
 <kbd>WL</kbd>      | Load frameset to register (same as <kbd>C-x r j</kbd>
+<kbd>ZZ</kbd>      | Toggle current window zoom-in/zoom-out
 
 ##### Disabling key-chords
 

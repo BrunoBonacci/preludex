@@ -163,6 +163,16 @@
 (key-chord-define-global "WS" 'frameset-to-register)
 (key-chord-define-global "WL" 'jump-to-register)
 
+(defun window-toggle-zoom ()
+  (interactive)
+  (if (= 1 (length (window-list)))
+      (jump-to-register 'ZZ 't)
+    (progn
+      (frameset-to-register 'ZZ)
+      (delete-other-windows))))
+
+(key-chord-define-global "ZZ" 'window-toggle-zoom)
+
 
 ;;
 ;; Installing paradox package manager
