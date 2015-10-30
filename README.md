@@ -427,13 +427,14 @@ buffer. Passing prefix argument **BEFORE** =helm-M-x= **has no effect**.
 
 Keybinding         | Description
 -------------------|----------------------------------------------
-<kbd>jj</kbd>      | Jump to the beginning of a word(`avy-goto-word-1`)
-<kbd>jk</kbd>      | Jump to a character(`avy-goto-char`)
-<kbd>jl</kbd>      | Jump to the beginning of a line(`avy-goto-line`)
+<kbd>JK</kbd>      | Jump to a character(`avy-goto-char`)
+<kbd>JL</kbd>      | Jump to the beginning of a line(`avy-goto-line`)
 <kbd>JJ</kbd>      | Jump back to previous buffer(`prelude-switch-to-previous-buffer`)
-<kbd>uu</kbd>      | View edits as a tree(`undo-tree-visualize`)
-<kbd>xx</kbd>      | Executed extended command(`execute-extended-command`)
-<kbd>yy</kbd>      | Browse the kill ring(`browse-kill-ring`)
+<kbd>UU</kbd>      | View edits as a tree(`undo-tree-visualize`)
+<kbd>XX</kbd>      | Executed extended command(`execute-extended-command`)
+<kbd>YY</kbd>      | Browse the kill ring(`browse-kill-ring`)
+<kbd>WS</kbd>      | Save frameset to register (same as <kbd>C-x r f</kbd>
+<kbd>WL</kbd>      | Load frameset to register (same as <kbd>C-x r j</kbd>
 
 ##### Disabling key-chords
 

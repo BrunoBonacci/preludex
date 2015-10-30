@@ -142,6 +142,7 @@
 ;; Getting rid of annoying key chords
 ;;
 (prelude-require-package 'key-chord)
+;; disabling lowercase chords
 (key-chord-define-global "jj" nil)
 (key-chord-define-global "jl" nil)
 (key-chord-define-global "jk" nil)
@@ -149,12 +150,18 @@
 (key-chord-define-global "xx" nil)
 (key-chord-define-global "yy" nil)
 
+;; remapping chords
 (key-chord-define-global "JL" 'avy-goto-line)
 (key-chord-define-global "JK" 'avy-goto-char)
 (key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
 (key-chord-define-global "UU" 'undo-tree-visualize)
 (key-chord-define-global "XX" 'execute-extended-command)
 (key-chord-define-global "YY" 'browse-kill-ring)
+(key-chord-define-global "YY" 'browse-kill-ring)
+
+;; custom chords
+(key-chord-define-global "WS" 'frameset-to-register)
+(key-chord-define-global "WL" 'jump-to-register)
 
 
 ;;
