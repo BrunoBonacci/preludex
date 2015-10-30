@@ -155,3 +155,9 @@
 (key-chord-define-global "UU" 'undo-tree-visualize)
 (key-chord-define-global "XX" 'execute-extended-command)
 (key-chord-define-global "YY" 'browse-kill-ring)
+
+
+;;
+;; Installing paradox package manager
+;;
+(prelude-require-package 'paradox)
