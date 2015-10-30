@@ -136,3 +136,22 @@
 ;; ERC - irc
 ;;
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
+
+;;
+;; Getting rid of annoying key chords
+;;
+(prelude-require-package 'key-chord)
+(key-chord-define-global "jj" nil)
+(key-chord-define-global "jl" nil)
+(key-chord-define-global "jk" nil)
+(key-chord-define-global "uu" nil)
+(key-chord-define-global "xx" nil)
+(key-chord-define-global "yy" nil)
+
+(key-chord-define-global "JL" 'avy-goto-line)
+(key-chord-define-global "JK" 'avy-goto-char)
+(key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
+(key-chord-define-global "UU" 'undo-tree-visualize)
+(key-chord-define-global "XX" 'execute-extended-command)
+(key-chord-define-global "YY" 'browse-kill-ring)
