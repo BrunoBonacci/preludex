@@ -263,7 +263,7 @@
 White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (replace-regexp-in-string "\\`[ \t\n]*" "" (replace-regexp-in-string "[ \t\n]*\\'" "" string)))
 
-(defun code-box (title)
+(defun comment-box (title)
   (let* ((size 80)
          (norm-title (upcase
                       (-trim-string
@@ -279,7 +279,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
               ))))
 
 
-(defun my-code-box ()
+(defun my-comment-box ()
   "Convert word at point (or selected region) to code box"
   (interactive)
   (let* ((bounds (if (use-region-p)
@@ -290,4 +290,4 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (delete-region (car bounds) (cdr bounds))
       (insert (code-box text)))))
 
-(key-chord-define-global "CB" 'my-code-box)
+(key-chord-define-global "CB" 'my-comment-box)
