@@ -436,6 +436,7 @@ Keybinding         | Description
 <kbd>WS</kbd>      | Save frameset to register (same as <kbd>C-x r f</kbd>
 <kbd>WL</kbd>      | Load frameset to register (same as <kbd>C-x r j</kbd>
 <kbd>ZZ</kbd>      | Toggle current window zoom-in/zoom-out
+<kbd>CB</kbd>      | Takes the content of a the current line and create a comment box around it
 
 ##### Disabling key-chords
 

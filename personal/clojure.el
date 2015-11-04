@@ -250,3 +250,44 @@
 (setq cider-show-error-buffer nil)
 (define-key cider-mode-map
   (kbd "C-c e") 'cider-visit-error-buffer)
+
+
+;;
+;; Code boxes
+;;
+(defun -pad-center (str len char)
+  (store-substring (make-string len char) (/ (- len (length str)) 2) str))
+
+(defun -trim-string (string)
+  "Remove white spaces in beginning and ending of STRING.
+White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
+  (replace-regexp-in-string "\\`[ \t\n]*" "" (replace-regexp-in-string "[ \t\n]*\\'" "" string)))
+
+(defun code-box (title)
+  (let* ((size 80)
+         (norm-title (upcase
+                      (-trim-string
+                       (replace-regexp-in-string "\\(.\\)" "\\1 " title))))
+         (decor-title (concat "---==| " norm-title " |==----" )))
+    (flet ((str-repeat (size char) (make-string size (string-to-char char))))
+      (concat "\n"
+              (str-repeat 80 ";") "\n"
+              ";;" (str-repeat (- size 4) " ") ";;\n"
+              ";;" (-pad-center decor-title (- size 4) ? ) ";;\n"
+              ";;" (str-repeat (- size 4) " ") ";;\n"
+              (str-repeat 80 ";") "\n"
+              ))))
+
+
+(defun my-code-box ()
+  "Convert word at point (or selected region) to code box"
+  (interactive)
+  (let* ((bounds (if (use-region-p)
+                     (cons (region-beginning) (region-end))
+                   (bounds-of-thing-at-point 'line)))
+         (text   (buffer-substring-no-properties (car bounds) (cdr bounds))))
+    (when bounds
+      (delete-region (car bounds) (cdr bounds))
+      (insert (code-box text)))))
+
+(key-chord-define-global "CB" 'my-code-box)
