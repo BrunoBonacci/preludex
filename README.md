@@ -680,6 +680,6 @@ and send me a pull request. :-)
 ## License
 
 Emacs Prelude is developed by [Bozhidar](https://twitter.com/bbatsov)
-And my customizations are developed by [Bruno Bonacci](https://twitter.com/BrunoBonacci)
+And customizations are developed by [Bruno Bonacci](https://twitter.com/BrunoBonacci)
 
 [badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
