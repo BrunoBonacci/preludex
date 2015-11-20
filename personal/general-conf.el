@@ -178,3 +178,11 @@
 ;; Installing paradox package manager
 ;;
 (prelude-require-package 'paradox)
+
+
+;;
+;; Installing beacon
+;;
+(prelude-require-package 'beacon)
+(setq beacon-color "green")
+(beacon-mode 1)
