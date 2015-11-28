@@ -288,6 +288,6 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
          (text   (buffer-substring-no-properties (car bounds) (cdr bounds))))
     (when bounds
       (delete-region (car bounds) (cdr bounds))
-      (insert (code-box text)))))
+      (insert (comment-box text)))))
 
 (key-chord-define-global "CB" 'my-comment-box)
