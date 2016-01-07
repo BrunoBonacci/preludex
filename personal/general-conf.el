@@ -84,7 +84,9 @@
 * org-mode is a great tool, use it for your own notes
 ** org-mode key-bindings http://orgmode.org/orgcard.txt
 ** Documentation: http://orgmode.org/
+** Good cheatsheet: http://orgmode.org/orgcard.pdf
 ** Video tutorials:
+  - https://vimeo.com/15269391
   - https://www.youtube.com/watch?v=6W82EdwQhxU
   - https://www.youtube.com/watch?v=fgizHHd7nOo
   - https://www.youtube.com/watch?v=bzZ09dAbLEE
