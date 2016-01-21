@@ -188,3 +188,22 @@
 (prelude-require-package 'beacon)
 (setq beacon-color "green")
 (beacon-mode 1)
+
+
+;;
+;; Installing WSD-mode
+;;
+(prelude-require-package 'wsd-mode)
+(add-hook 'wsd-mode-hook 'company-mode)
+(setq wsd-style "modern-blue")
+(setq wsd-style-altern "napkin")
+
+(defun wsd-show-diagram-inline-alternative ()
+  (interactive)
+  (let*
+      ((wsd-style-temp wsd-style))
+    (setq wsd-style wsd-style-altern)
+    (wsd-show-diagram-inline)
+    (setq wsd-style wsd-style-temp)))
+
+(define-key wsd-mode-map (kbd "C-c C-a") #'wsd-show-diagram-inline-alternative)
