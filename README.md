@@ -213,6 +213,7 @@ This will open file 'somefile' and set cursor on line 1234.
 * [Clojure refactor](https://github.com/clojure-emacs/clj-refactor.el)
 * [Paradox](https://github.com/Malabarba/paradox) package manager
 * [Beacon](https://github.com/Malabarba/beacon) for improved visibility
+* [WSD-mode](https://github.com/josteink/wsd-mode) for sequence diagrams
 
 Here the key bindings added:
 
@@ -242,6 +243,10 @@ Rest <kbd>C-c C-v</kbd> | Send request at point and show result in popup
 <kbd>C-c t</kbd>      | Open terminal
 <kbd>C-c p p</kbd>    | Open known projects
 <kbd>C-c p s g</kbd>  | Search in current project
+WSD <kbd>C-c C-c</kbd> | Create sequence diagram
+WSD <kbd>C-c C-a</kbd> | Create sequence diagram in alternative style
+WSD <kbd>C-c C-e</kbd> | Export sequence diagram
+
 
 
 
