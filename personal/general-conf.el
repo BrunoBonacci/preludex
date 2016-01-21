@@ -81,7 +81,7 @@
 ;; automatically open .TODO.org scripts at startup
 (setq default-message
       "
-* org-mode is a great tool, use it for your own notes
+* org-mode is a great tool, use it for your own notes (press TAB on this line)
 ** org-mode key-bindings http://orgmode.org/orgcard.txt
 ** Documentation: http://orgmode.org/
 ** Good cheatsheet: http://orgmode.org/orgcard.pdf
@@ -194,6 +194,7 @@
 ;; Installing WSD-mode
 ;;
 (prelude-require-package 'wsd-mode)
+(require 'wsd-mode)
 (add-hook 'wsd-mode-hook 'company-mode)
 (setq wsd-style "modern-blue")
 (setq wsd-style-altern "napkin")
