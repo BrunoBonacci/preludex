@@ -7,7 +7,7 @@
 ;;(if (require 'solarized-theme nil 'noerror)
 ;;  (setq prelude-theme 'solarized-dark)
 ;;  (setq prelude-theme nil))
-(setq solarized-use-variable-pitch nil)
+;;(setq solarized-use-variable-pitch nil)
 
 (set-face-attribute 'default nil :height 140)
 ;; hightlight modeline of active buffer
