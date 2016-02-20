@@ -208,3 +208,10 @@
     (setq wsd-style wsd-style-temp)))
 
 (define-key wsd-mode-map (kbd "C-c C-a") #'wsd-show-diagram-inline-alternative)
+
+
+;;
+;; Using Helm by default everywhere
+;;
+(require 'prelude-helm-everywhere)
+(setq helm-M-x-fuzzy-match t)
