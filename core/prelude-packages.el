@@ -1,6 +1,6 @@
 ;;; prelude-packages.el --- Emacs Prelude: default package selection.
 ;;
-;; Copyright © 2011-2015 Bozhidar Batsov
+;; Copyright © 2011-2016 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -62,6 +62,7 @@
     god-mode
     grizzl
     guru-mode
+    imenu-anywhere
     ov
     projectile
     magit
@@ -72,6 +73,7 @@
     smartrep
     undo-tree
     volatile-highlights
+    which-key
     zenburn-theme
     zop-to-char)
   "A list of packages to ensure are installed at launch.")
