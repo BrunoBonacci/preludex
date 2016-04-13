@@ -253,6 +253,13 @@
 
 
 ;;
+;; enabling cider-eval-sexp-fu
+;;
+(prelude-require-package 'cider-eval-sexp-fu)
+(require 'cider-eval-sexp-fu)
+
+
+;;
 ;; Code boxes
 ;;
 (defun -pad-center (str len char)
