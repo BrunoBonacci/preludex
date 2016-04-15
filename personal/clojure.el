@@ -40,6 +40,12 @@
 ;;
 ;; Clojure mode font-locking for partial
 ;;
+;; NOTE: to disable font locking once is activated run this
+;;
+;;   (defalias 'font-lock-add-keywords 'ignore)
+;;
+;; And then reopen the buffer.
+;;
 (eval-after-load 'clojure-mode
   '(font-lock-add-keywords
     'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
