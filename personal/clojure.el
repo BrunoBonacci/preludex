@@ -39,75 +39,86 @@
 
 ;;
 ;; Clojure mode font-locking for partial
+;; To disable font locking at startup add this in your init.el
+;;
+;;    (setq clojure-disable-font-locking t)
 ;;
 ;; NOTE: to disable font locking once is activated run this
 ;;
-;;   (defalias 'font-lock-add-keywords 'ignore)
+;;    (fset 'old-font-lock-add-keywords (symbol-function 'font-lock-add-keywords))
+;;    (defalias 'font-lock-add-keywords 'ignore)
 ;;
 ;; And then reopen the buffer.
+;; To restore run:
 ;;
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "λ")
-                               nil))))))
+;;    (fset 'font-lock-add-keywords 'old-font-lock-add-keywords)
+;;
+;; And then reopen the buffer.
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("\\(#\\)("
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "ƒ")
-                               nil))))))
+(unless (bound-and-true-p clojure-disable-font-locking)
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("\\(#\\){"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "∈")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "λ")
+                                 nil))))))
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(partial\\)[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "Ƥ")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("\\(#\\)("
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "ƒ")
+                                 nil))))))
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(comp\\)[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "⨌")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("\\(#\\){"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "∈")
+                                 nil))))))
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(and\\)[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "⋏")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(partial\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "Ƥ")
+                                 nil))))))
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(or\\)[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "⋎")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(comp\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "⨌")
+                                 nil))))))
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(for\\)[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "∀")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(and\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "⋏")
+                                 nil))))))
 
-(eval-after-load 'clojure-mode
-  '(font-lock-add-keywords
-    'clojure-mode `(("(\\(reduce\\)[[:space:]]"
-                     (0 (progn (compose-region (match-beginning 1)
-                                               (match-end 1) "∑")
-                               nil))))))
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(or\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "⋎")
+                                 nil))))))
+
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(for\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "∀")
+                                 nil))))))
+
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(reduce\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "∑")
+                                 nil)))))))
 
 
 ;;
@@ -304,3 +315,11 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (insert (comment-box text)))))
 
 (key-chord-define-global "CB" 'my-comment-box)
+
+
+;;
+;; aggressive-indent-mode
+;;
+(prelude-require-package 'aggressive-indent)
+(require 'aggressive-indent)
+(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
