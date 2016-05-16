@@ -215,3 +215,9 @@
 ;;
 (require 'prelude-helm-everywhere)
 (setq helm-M-x-fuzzy-match t)
+
+
+;;
+;; Installing password-generator
+;;
+(prelude-require-package 'password-generator)
