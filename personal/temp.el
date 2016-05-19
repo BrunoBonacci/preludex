@@ -67,3 +67,24 @@
 
 (define-key cider-mode-map
   (kbd "C-c C-i") #'incanter-eval-and-display-chart)
+
+
+;;
+;; CIDER repl evaluation with output in comment
+;;
+
+;; (require 'cider-interaction)
+;; (defun cider-eval-print-handler (&optional buffer)
+;;   "Make a handler for evaluating and printing result in BUFFER."
+;;   (nrepl-make-response-handler (or buffer (current-buffer))
+;;                                (lambda (buffer value)
+;;                                  (with-current-buffer buffer
+;;                                    (insert
+;;                                     (if (derived-mode-p 'cider-clojure-interaction-mode)
+;;                                         (format "\n%s\n" value)
+;;                                       (format ";;=> %s" value)))))
+;;                                (lambda (_buffer out)
+;;                                  (cider-emit-interactive-eval-output out))
+;;                                (lambda (_buffer err)
+;;                                  (cider-emit-interactive-eval-err-output err))
+;;                                '()))
