@@ -88,3 +88,37 @@
 ;;                                (lambda (_buffer err)
 ;;                                  (cider-emit-interactive-eval-err-output err))
 ;;                                '()))
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                            ;;
+;;            ---==| W I N D O W S   R E S I Z E   M O D E |==----            ;;
+;;                                                                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; Minor mode to resize windows
+;;
+(defvar iresize-mode-map
+  (let ((m (make-sparse-keymap)))
+    (define-key m (kbd "V")       'enlarge-window)
+    (define-key m (kbd "<down>")  'enlarge-window)
+    (define-key m (kbd "^")       'shrink-window)
+    (define-key m (kbd "<up>")    'shrink-window)
+    (define-key m (kbd ">")       'enlarge-window-horizontally)
+    (define-key m (kbd "<right>") 'enlarge-window-horizontally)
+    (define-key m (kbd "<")       'shrink-window-horizontally)
+    (define-key m (kbd "<left>")  'shrink-window-horizontally)
+    (define-key m (kbd "C-g")     'iresize-mode)
+    m))
+
+(define-minor-mode iresize-mode
+  :initial-value nil
+  :lighter " IResize"
+  :keymap iresize-mode-map
+  :group 'iresize)
+
+(provide 'iresize)
+(key-chord-define-global "WR" 'iresize-mode)
