@@ -122,3 +122,37 @@
 
 (provide 'iresize)
 (key-chord-define-global "WR" 'iresize-mode)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                            ;;
+;;             ---==| F O R M A T   C O D E   T O   R T F |==----             ;;
+;;                                                                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; Format code for POWER-POINT
+;; *format-code-rtf-size* - default size
+;; *format-code-rtf-theme* - default theme
+;; http://www.andre-simon.de/doku/highlight/en/theme-samples.php
+;;
+;; "C-M-|" to format selection
+;; run with a numerical prefix
+;; to set the size.
+;;
+(setq *format-code-rtf-size* 12)
+(setq *format-code-rtf-theme* "solarized-dark")
+
+(defun format-code-region-rtf (size)
+  (interactive "P")
+  (shell-command-on-region
+   (region-beginning) (region-end)
+   (format "highlight -S clojure -O rtf -s %s -f -k \"Andale Mono\"  -K %d | pbcopy"
+           (if (boundp #'*format-code-rtf-theme*) *format-code-rtf-theme* "solarized-dark")
+           (or size (if (boundp #'*format-code-rtf-size*) *format-code-rtf-size* 12))))
+  (message "Code formatted and copied in your clipboard."))
+
+
+(define-key cider-mode-map
+  (kbd "C-M-|") #'format-code-region-rtf)
