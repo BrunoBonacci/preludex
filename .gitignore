@@ -21,3 +21,4 @@ session*
 tramp
 /var/pcache
 /request/
+/personal/preload/conf.el

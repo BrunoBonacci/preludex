@@ -4,8 +4,20 @@
 ;;                                                                            ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;
+;; This file contains integrations, scripts, and hacks which are incomplete
+;; or temporary, or simply the integration cannot be done in a general way.
+;;
+;; So if you wish to enable them add the following line in your
+;; `.emacs.d/personal/preload/conf.el`
+;;
+;;     (setq *preludex-enable-temp-integrations* 't)
+;;
 
 
+(when (bound-and-true-p *preludex-enable-temp-integrations*)
+
+  (message "Preludex temp integrations enabled.")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -156,3 +168,9 @@
 
 (define-key cider-mode-map
   (kbd "C-M-|") #'format-code-region-rtf)
+
+
+;;
+;; END
+;;
+)
