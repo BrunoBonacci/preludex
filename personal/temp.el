@@ -53,14 +53,14 @@
   "Use `BUFFER-NAME' to display the image in `FILE-NAME'.
   Checks weather `BUFFER-NAME' already exists, and if not create
   as needed."
-    (switch-to-buffer-other-window buffer-name)
-    (iimage-mode t)
-    (read-only-mode -1)
-    (kill-region (point-min) (point-max))
-    ;; unless we clear the cache, the same cached image will
-    ;; always get re-displayed.
-    (clear-image-cache nil)
-    (insert-image (create-image file-name))
+  (switch-to-buffer-other-window buffer-name)
+  (iimage-mode t)
+  (read-only-mode -1)
+  (kill-region (point-min) (point-max))
+  ;; unless we clear the cache, the same cached image will
+  ;; always get re-displayed.
+  (clear-image-cache nil)
+  (insert-image (create-image file-name))
   (read-only-mode t))
 
 (defun incanter-eval-and-display-chart ()
@@ -69,15 +69,15 @@
   (interactive)
   (let ((old-buf (current-buffer)))
     (condition-case nil
-        (delete-file incanter-temp-chart-file)
-      (error nil))
+                    (delete-file incanter-temp-chart-file)
+                    (error nil))
     (cider-eval-last-sexp)
     (sleep-for 0 incanter-wait-time)
     (incanter-display-image-inline "*incanter-chart*" incanter-temp-chart-file)
     (switch-to-buffer-other-window old-buf)))
 
 (define-key cider-mode-map
-  (kbd "C-c C-i") #'incanter-eval-and-display-chart)
+    (kbd "C-c C-i") #'incanter-eval-and-display-chart)
 
 ;;
 ;; CIDER repl evaluation with output in comment
@@ -152,15 +152,16 @@
 ;; to set the size.
 ;;
 (setq *format-code-rtf-size* 12)
-(setq *format-code-rtf-theme* "solarized-dark")
+(setq *format-code-rtf-theme* "pastie")
 
 (defun format-code-region-rtf (size)
   (interactive "P")
   (shell-command-on-region
    (region-beginning) (region-end)
-   (format "highlight -S clojure -O rtf -s %s -f -k \"Andale Mono\"  -K %d | pbcopy"
-           (if (boundp #'*format-code-rtf-theme*) *format-code-rtf-theme* "solarized-dark")
-           (or size (if (boundp #'*format-code-rtf-size*) *format-code-rtf-size* 12))))
+   ;; "highlight -S clojure -O rtf -s %s -f -k \"Andale Mono\"  -K %d | pbcopy"
+   (format "pygmentize -f rtf -O 'fontface=Menlo,style=%s,fontsize=%d' -l clojure | pbcopy"
+           (if (boundp #'*format-code-rtf-theme*) *format-code-rtf-theme* "pastie")
+           (* 2 (or size (if (boundp #'*format-code-rtf-size*) *format-code-rtf-size* 12)))))
   (message "Code formatted and copied in your clipboard."))
 
 
