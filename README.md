@@ -1,5 +1,5 @@
 [![License GPL 3][badge-license]](http://www.gnu.org/licenses/gpl-3.0.txt)
-[![Gratipay](http://img.shields.io/gratipay/bbatsov.svg)](https://gratipay.com/bbatsov/)
+[![Gratipay Team](https://img.shields.io/gratipay/team/prelude.svg?maxAge=2592000)](https://gratipay.com/prelude/)
 
 PreludeX => Emacs Prelude Extended
 ==================================
@@ -15,9 +15,15 @@ library to the mix. The final product offers an easy to use Emacs
 configuration for Emacs newcomers and lots of additional power for
 Emacs power users.
 
-Prelude is compatible with **GNU Emacs 24.x or greater**. In general you're
+Prelude is compatible **ONLY with GNU Emacs 24.4+**. In general you're
 advised to always run Prelude with the latest Emacs - currently
 **24.5**.
+
+You can support the development of Prelude via
+[Salt](https://salt.bountysource.com/teams/prelude) and
+[Gratipay](https://www.gratipay.com/prelude).
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.1.3/dist/gratipay.png)](https://gratipay.com/prelude)
 
 **Table of Contents**
 
@@ -51,7 +57,7 @@ advised to always run Prelude with the latest Emacs - currently
     - [Problems with flyspell-mode](#problems-with-flyspell-mode)
     - [Ugly colors in the terminal Emacs version](#ugly-colors-in-the-terminal-emacs-version)
     - [MELPA error on initial startup](#melpa-error-on-initial-startup)
-    - [Warnings on arrow navigation in editor buffers](#warnings-on-navigation-in-editor-buffers)
+    - [Warnings on arrow navigation in editor buffers](#warnings-on-arrow-navigation-in-editor-buffers)
     - [Customized C-a behavior](#customized-c-a-behavior)
     - [Poor ido matching performance on large datasets](#poor-ido-matching-performance-on-large-datasets)
     - [Windows compatibility](#windows-compatibility)
@@ -270,7 +276,7 @@ Keybinding         | Description
 <kbd>C-+</kbd>     | Increase font size(`text-scale-increase`).
 <kbd>C--</kbd>     | Decrease font size(`text-scale-decrease`).
 <kbd>C-x O</kbd>   | Go back to previous window (the inverse of `other-window` (`C-x o`)).
-<kbd>C-^</kbd>     | Join two lines into one(`prelude-top-join-line`).
+<kbd>C-^</kbd>     | Join two lines into one(`crux-top-join-line`).
 <kbd>C-x p</kbd>   | Start `proced` (manage processes from Emacs; works only in Linux).
 <kbd>C-x m</kbd>   | Start `eshell`.
 <kbd>C-x M-m</kbd> | Start your default shell.
@@ -286,7 +292,7 @@ Keybinding         | Description
 <kbd>C-x M-g</kbd> | Open Magit's popup of popups.
 <kbd>M-Z</kbd>     | Zap up to char.
 <kbd>C-=</kbd>     | Run `expand-region` (incremental text selection).
-<kbd>C-a</kbd>     | Run `prelude-move-beginning-of-line`. Read [this](http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/) for details.
+<kbd>C-a</kbd>     | Run `crux-move-beginning-of-line`. Read [this](http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/) for details.
 
 #### Prelude Mode
 
@@ -434,6 +440,7 @@ buffer. Passing prefix argument **BEFORE** =helm-M-x= **has no effect**.
 
 Keybinding         | Description
 -------------------|----------------------------------------------
+<<<<<<< HEAD
 <kbd>JK</kbd>      | Jump to a character(`avy-goto-char`)
 <kbd>JL</kbd>      | Jump to the beginning of a line(`avy-goto-line`)
 <kbd>JJ</kbd>      | Jump back to previous buffer(`prelude-switch-to-previous-buffer`)
@@ -444,6 +451,15 @@ Keybinding         | Description
 <kbd>WL</kbd>      | Load frameset to register (same as <kbd>C-x r j</kbd>
 <kbd>ZZ</kbd>      | Toggle current window zoom-in/zoom-out
 <kbd>CB</kbd>      | Takes the content of a the current line and create a comment box around it
+=======
+<kbd>jj</kbd>      | Jump to the beginning of a word(`avy-goto-word-1`)
+<kbd>jk</kbd>      | Jump to a character(`avy-goto-char`)
+<kbd>jl</kbd>      | Jump to the beginning of a line(`avy-goto-line`)
+<kbd>JJ</kbd>      | Jump back to previous buffer(`crux-switch-to-previous-buffer`)
+<kbd>uu</kbd>      | View edits as a tree(`undo-tree-visualize`)
+<kbd>xx</kbd>      | Executed extended command(`execute-extended-command`)
+<kbd>yy</kbd>      | Browse the kill ring(`browse-kill-ring`)
+>>>>>>> f5f4d773f301dd80d0551055f6e3efdb0b5390b2
 
 ##### Disabling key-chords
 
@@ -679,6 +695,7 @@ time. This situation will probably improve over time.
 Support is available via the Prelude Google Group <emacs-prelude@googlegroups.com>.
 There's also a Freenode channel you can visit - `#prelude-emacs`.
 
+<<<<<<< HEAD
 Check out the project's
 [issue list](https://github.com/bbatsov/prelude/issues?sort=created&direction=desc&state=open)
 a list of unresolved issues. By the way - feel free to fix any of them
@@ -688,5 +705,19 @@ and send me a pull request. :-)
 
 Emacs Prelude is developed by [Bozhidar](https://twitter.com/bbatsov)
 And customizations are developed by [Bruno Bonacci](https://twitter.com/BrunoBonacci)
+=======
+## Contributors
+
+Here's a [list](https://github.com/bbatsov/prelude/contributors) of all the people who have contributed to the
+development of Emacs Prelude.
+
+## Bugs & Improvements
+
+Bug reports and suggestions for improvements are always
+welcome. GitHub pull requests are even better! :-)
+
+Cheers,<br/>
+[Bozhidar](https://twitter.com/bbatsov)
+>>>>>>> f5f4d773f301dd80d0551055f6e3efdb0b5390b2
 
 [badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
