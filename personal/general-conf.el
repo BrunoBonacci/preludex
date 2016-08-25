@@ -221,3 +221,10 @@
 ;; Installing password-generator
 ;;
 (prelude-require-package 'password-generator)
+
+
+;;
+;; Installing editable grep buffers
+;;
+(prelude-require-package 'wgrep)
+(setq wgrep-auto-save-buffer t)

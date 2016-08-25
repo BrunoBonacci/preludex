@@ -220,6 +220,7 @@ This will open file 'somefile' and set cursor on line 1234.
 * [Paradox](https://github.com/Malabarba/paradox) package manager
 * [Beacon](https://github.com/Malabarba/beacon) for improved visibility
 * [WSD-mode](https://github.com/josteink/wsd-mode) for sequence diagrams
+* [wgrep](https://github.com/mhayashi1120/Emacs-wgrep) for editable grep buffers
 
 Here the key bindings added:
 
@@ -252,6 +253,10 @@ Rest <kbd>C-c C-v</kbd> | Send request at point and show result in popup
 WSD <kbd>C-c C-c</kbd> | Create sequence diagram
 WSD <kbd>C-c C-a</kbd> | Create sequence diagram in alternative style
 WSD <kbd>C-c C-e</kbd> | Export sequence diagram
+grep  <kbd>C-c C-p</kbd> | Enter editable grep mode
+wgrep <kbd>C-c C-C</kbd> | Save all changes and leave wgrep mode
+wgrep <kbd>C-c C-k</kbd> | Discard all changes and leave wgrep mode
+
 
 
 
