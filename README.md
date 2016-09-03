@@ -698,19 +698,9 @@ time. This situation will probably improve over time.
 ## Support
 
 Support is available via the Prelude Google Group <emacs-prelude@googlegroups.com>.
+
 There's also a Freenode channel you can visit - `#prelude-emacs`.
 
-<<<<<<< HEAD
-Check out the project's
-[issue list](https://github.com/bbatsov/prelude/issues?sort=created&direction=desc&state=open)
-a list of unresolved issues. By the way - feel free to fix any of them
-and send me a pull request. :-)
-
-## License
-
-Emacs Prelude is developed by [Bozhidar](https://twitter.com/bbatsov)
-And customizations are developed by [Bruno Bonacci](https://twitter.com/BrunoBonacci)
-=======
 ## Contributors
 
 Here's a [list](https://github.com/bbatsov/prelude/contributors) of all the people who have contributed to the
@@ -723,6 +713,9 @@ welcome. GitHub pull requests are even better! :-)
 
 Cheers,<br/>
 [Bozhidar](https://twitter.com/bbatsov)
->>>>>>> f5f4d773f301dd80d0551055f6e3efdb0b5390b2
-
 [badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
+
+## License
+
+Emacs Prelude is developed by [Bozhidar](https://twitter.com/bbatsov)
+And customizations are developed by [Bruno Bonacci](https://twitter.com/BrunoBonacci)
