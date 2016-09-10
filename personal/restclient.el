@@ -9,3 +9,9 @@
 ;;
 (prelude-require-package 'company-restclient)
 (add-to-list 'company-backends 'company-restclient)
+
+;;
+;; activate on file *.rest
+;;
+(setq auto-mode-alist
+      (append '(("\\.rest\\'" . restclient-mode)) auto-mode-alist))
