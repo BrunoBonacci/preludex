@@ -2,6 +2,6 @@
 # --
 (do
   (require 'alembic.still)
-  (alembic.still/distill '[criterium "0.4.3"])
+  (alembic.still/distill '[criterium "0.4.4"])
   (use 'criterium.core))
 (bench ${1:(Thread/sleep 1000)})

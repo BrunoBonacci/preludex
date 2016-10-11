@@ -221,6 +221,8 @@ This will open file 'somefile' and set cursor on line 1234.
 * [Beacon](https://github.com/Malabarba/beacon) for improved visibility
 * [WSD-mode](https://github.com/josteink/wsd-mode) for sequence diagrams
 * [wgrep](https://github.com/mhayashi1120/Emacs-wgrep) for editable grep buffers
+* [terraform-mode](https://github.com/syohex/emacs-terraform-mode)
+
 
 Here the key bindings added:
 

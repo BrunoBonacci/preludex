@@ -19,9 +19,20 @@
 ;; this necessary for the first time to install missing packages if
 ;; you change things here remember to apply them to
 ;; `personal/preload/theme.el` as well
-(prelude-require-packages '(color-theme-sanityinc-solarized solarized-theme))
+(prelude-require-packages '(solarized-theme))
 (load-theme 'solarized-dark t)
 (setq prelude-theme 'solarized-dark)
+
+;;(prelude-require-packages '(atom-one-dark-theme))
+;;(require 'atom-one-dark-theme)
+;;(load-theme 'atom-one-dark t)
+;;(setq prelude-theme 'atom-one-dark)
+
+;;(prelude-require-packages '(zenburn-theme))
+;;(require 'zenburn-theme)
+;;(load-theme 'zenburn t)
+;;(setq prelude-theme 'zenburn)
+
 ;; change default font size
 (set-face-attribute 'default nil :height 140)
 ;; hightlight modeline of active buffer
@@ -228,3 +239,8 @@
 ;;
 (prelude-require-package 'wgrep)
 (setq wgrep-auto-save-buffer t)
+
+;;
+;; Installing terraform mode
+;;
+(prelude-require-package 'terraform-mode)
