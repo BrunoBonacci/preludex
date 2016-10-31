@@ -19,19 +19,39 @@
 ;; this necessary for the first time to install missing packages if
 ;; you change things here remember to apply them to
 ;; `personal/preload/theme.el` as well
-(prelude-require-packages '(solarized-theme))
-(load-theme 'solarized-dark t)
-(setq prelude-theme 'solarized-dark)
 
-;;(prelude-require-packages '(atom-one-dark-theme))
-;;(require 'atom-one-dark-theme)
-;;(load-theme 'atom-one-dark t)
-;;(setq prelude-theme 'atom-one-dark)
+(setq themes-list
+      ;; theme package           theme name
+      '((solarized-theme         solarized-dark)
+        (zenburn-theme           zenburn)
+        (atom-one-dark-theme     atom-one-dark)
+        (gotham-theme            gotham)
+        (cyberpunk-theme         cyberpunk)
+        (alect-themes            alect-dark)
+        (green-phosphor-theme    green-phosphor)))
 
-;;(prelude-require-packages '(zenburn-theme))
-;;(require 'zenburn-theme)
-;;(load-theme 'zenburn t)
-;;(setq prelude-theme 'zenburn)
+
+(require 'dash)
+(prelude-require-packages (-map '-first-item themes-list))
+
+(defun full-load-and-set-theme
+    (theme-package theme-name)
+  "loads the theme given the package is installed and the theme exists"
+  (require theme-package)
+  (load-theme theme-name t)
+  (setq prelude-theme theme-name))
+
+(defun load-theme-by-name (theme)
+  "Give a theme names it looks up in the list of installed themes
+   and it load and set the current theme to the given one."
+  (-when-let* ((sel-theme (-first-item
+                            (-filter (lambda (x) (eq (-last-item x) theme)) themes-list))))
+    (full-load-and-set-theme (-first-item sel-theme) (-last-item sel-theme))))
+
+;;
+;; Setting the current theme
+;;
+(load-theme-by-name 'gotham)
 
 ;; change default font size
 (set-face-attribute 'default nil :height 140)
