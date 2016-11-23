@@ -17,17 +17,18 @@ Emacs power users.
 
 Prelude is compatible **ONLY with GNU Emacs 24.4+**. In general you're
 advised to always run Prelude with the latest Emacs - currently
-**24.5**.
+**25.1**.
 
 You can support the development of Prelude via
-[Salt](https://salt.bountysource.com/teams/prelude) and
+[Salt](https://bountysource.com/teams/prelude) and
 [Gratipay](https://www.gratipay.com/prelude).
 
 [![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.1.3/dist/gratipay.png)](https://gratipay.com/prelude)
 
 **Table of Contents**
 
-- [Installing Emacs 24](#installing-emacs-24)
+- [Fast Forward](#fast-forward)
+- [Installing Emacs](#installing-emacs)
 - [Installation](#installation)
 - [Updating Prelude](#updating-prelude)
     - [Manual update](#manual-update)
@@ -65,11 +66,57 @@ You can support the development of Prelude via
 - [License](#License)
 
 
+Assuming you're using an Unix-like OS (`*BSD`, `GNU/Linux`, `OS X`, `Solaris`,
+etc), you already have Emacs 24.4+ installed, as well as `git` & `curl` you
+can skip the whole manual and just type in your favorite shell the
+following command:
 
-## Installing Emacs 24
+```bash
+curl -L https://git.io/epre | sh
+```
 
-Obviously to use the Emacs Prelude you have to install Emacs 24
-first.
+You can now power up your Emacs, sit back and enjoy Prelude,
+forgetting about the rest of this manual.
+
+There are two environment variables you can use to control the
+source repository and the installation directory. To change the
+installation directory:
+
+```bash
+export PRELUDE_INSTALL_DIR="$HOME/.emacs.d" && curl -L https://github.com/bbatsov/prelude/raw/master/utils/installer.sh | sh
+```
+
+To change the source repository:
+
+```bash
+export PRELUDE_URL="https://github.com/yourname/prelude.git" && curl -L https://github.com/bbatsov/prelude/raw/master/utils/installer.sh | sh
+```
+
+Note that the installer will back up any existing `.emacs` file or
+`.emacs.d` since it will unpack Prelude's code in `.emacs.d`. If
+you're doing a manual install make sure you don't have a `.emacs` file
+or back up your existing `.emacs.d` directory manually.
+
+Don't forget to adjust your `prelude-modules.el` file once the installation is done.
+By default most of the modules that ship with Prelude are not loaded.
+
+## Installing Emacs
+
+Obviously to use the Emacs Prelude you have to install Emacs
+first. Have a look at
+the
+[WikEmacs articles on installing Emacs](http://wikemacs.org/index.php/Installing_Emacs).
+
+## Installation
+
+### Automated
+
+You can install **Emacs Prelude** via the command line with either `curl` or
+`wget`. Naturally `git` is also required.
+
+#### Via Curl
+
+If you're using `curl` type the following command:
 
    - Mac OSX see [http://emacsformacosx.com/](http://emacsformacosx.com/)
    - Others platform look at [WikEmacs articles on installing Emacs](http://wikemacs.org/index.php/Installing_Emacs).
@@ -502,17 +549,17 @@ You can, of course, install anything you wish manually as well.
 
 ### Color Themes
 
-Emacs 24 ships with a new theming facility that effectively renders
-the old color-theme package obsolete. Emacs 24 provides a dozen of
+Emacs provides a dozen of
 built-in themes you can use out-of-the-box by invoking the `M-x
 load-theme` command.
 
-[Zenburn](https://github.com/bbatsov/zenburn-emacs) is the default color theme in Prelude, but you can change it
-at your discretion. Why Zenburn? I (and lots of hackers around the
-world) find it pretty neat for some reason. Personally I find the
-default theme pretty tiresome for the eyes, that's why I took that
-"controversial" decision to replace it. You can, of course, easily go
-back to the default (or select another theme entirely).
+[Zenburn](https://github.com/bbatsov/zenburn-emacs) is the default
+color theme in Prelude, but you can change it at your discretion. Why
+Zenburn? I (and lots of hackers around the world) find it pretty neat
+for some reason. Personally I find the default theme pretty tiresome
+for the eyes, that's why I took that "controversial" decision to
+replace it. You can, of course, easily go back to the default (or
+select another theme entirely).
 
 To disable Zenburn just put in your personal config the following
 line:
@@ -694,7 +741,7 @@ You can always disable the improved sorting algorithm all together like this:
 ### Windows compatibility
 
 While everything in Prelude should work fine in Windows, I test it only
-with Linux & OSX, so there are Windows related problems from time to
+with Linux & OS X, so there are Windows related problems from time to
 time. This situation will probably improve over time.
 
 ## Support

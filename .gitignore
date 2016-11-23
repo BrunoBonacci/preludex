@@ -22,3 +22,6 @@ tramp
 /var/pcache
 /request/
 /personal/preload/conf.el
+.emacs.desktop
+.emacs.desktop.lock
+
