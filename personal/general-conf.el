@@ -283,6 +283,13 @@
 ;;
 ;; Install bm (bookmark)
 ;;
+(setq bm-restore-repository-on-load t)
+(setq bm-repository-file "~/.emacs.d/savefile/bm-bookmarks")
+(setq bm-buffer-persistence t)
+(setq bm-restore-repository-on-load t)
+(setq bm-cycle-all-buffers t)
+(setq bm-in-lifo-order t)
+(setq bm-persistent-face 'bm-face)
 (prelude-require-package 'bm)
 (require 'bm)
 (global-set-key (kbd "<f5>") 'bm-toggle)
@@ -295,13 +302,6 @@
 (global-set-key (kbd "s-5") 'bm-bookmark-regexp)
 (global-set-key (kbd "s-0") 'bm-remove-all-current-buffer)
 (global-set-key (kbd "s-)") 'bm-remove-all-all-buffers)
-(setq bm-restore-repository-on-load t)
-(setq bm-repository-file "~/.emacs.d/savefile/bm-bookmarks")
-(setq bm-buffer-persistence t)
-(setq bm-restore-repository-on-load t)
-(setq bm-cycle-all-buffers t)
-(setq bm-in-lifo-order t)
-(setq bm-persistent-face 'bm-face)
 (add-hook 'after-save-hook   #'(lambda nil
                                  (bm-buffer-save-all)
                                  (bm-repository-save)))
