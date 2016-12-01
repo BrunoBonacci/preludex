@@ -251,6 +251,14 @@
       helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
+;;
+;; Install Helm-ag
+;;
+(prelude-require-package 'helm-ag)
+(custom-set-variables
+ '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --skip-vcs-ignores --search-zip --ignore-dir target ")
+ '(helm-ag-command-option "--all-text")
+ '(helm-ag-insert-at-point 'symbol))
 
 ;;
 ;; Installing password-generator

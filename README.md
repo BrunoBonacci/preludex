@@ -269,6 +269,7 @@ This will open file 'somefile' and set cursor on line 1234.
 * [WSD-mode](https://github.com/josteink/wsd-mode) for sequence diagrams
 * [wgrep](https://github.com/mhayashi1120/Emacs-wgrep) for editable grep buffers
 * [terraform-mode](https://github.com/syohex/emacs-terraform-mode)
+* [helm-ag](https://github.com/syohex/emacs-helm-ag) super search. (`brew install ag`)
 
 
 Here the key bindings added:
