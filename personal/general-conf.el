@@ -184,13 +184,13 @@
 (key-chord-define-global "yy" nil)
 
 ;; remapping chords
-(key-chord-define-global "JL" 'avy-goto-line)
-(key-chord-define-global "JK" 'avy-goto-char)
-(key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
-(key-chord-define-global "UU" 'undo-tree-visualize)
-(key-chord-define-global "XX" 'execute-extended-command)
-(key-chord-define-global "YY" 'browse-kill-ring)
-(key-chord-define-global "YY" 'browse-kill-ring)
+;;(key-chord-define-global "JL" 'avy-goto-line)
+;;(key-chord-define-global "JK" 'avy-goto-char)
+;;(key-chord-define-global "JJ" 'prelude-switch-to-previous-buffer)
+;;(key-chord-define-global "UU" 'undo-tree-visualize)
+;;(key-chord-define-global "XX" 'execute-extended-command)
+;;(key-chord-define-global "YY" 'browse-kill-ring)
+;;(key-chord-define-global "YY" 'browse-kill-ring)
 
 ;; custom chords
 (key-chord-define-global "WS" 'frameset-to-register)
@@ -217,7 +217,8 @@
 ;; Installing beacon
 ;;
 (prelude-require-package 'beacon)
-(setq beacon-color "green")
+;;(setq beacon-color "green")
+(setq beacon-color "orange")
 (beacon-mode 1)
 
 
@@ -272,7 +273,44 @@
 (prelude-require-package 'wgrep)
 (setq wgrep-auto-save-buffer t)
 
+
 ;;
 ;; Installing terraform mode
 ;;
 (prelude-require-package 'terraform-mode)
+
+
+;;
+;; Install bm (bookmark)
+;;
+(prelude-require-package 'bm)
+(require 'bm)
+(global-set-key (kbd "<f5>") 'bm-toggle)
+(global-set-key (kbd "<f6>") 'bm-previous)
+(global-set-key (kbd "<f7>") 'bm-next)
+(global-set-key (kbd "<f8>") 'bm-bookmark-regexp)
+(global-set-key (kbd "s-1") 'bm-toggle)
+(global-set-key (kbd "s-2") 'bm-previous)
+(global-set-key (kbd "s-3") 'bm-next)
+(global-set-key (kbd "s-5") 'bm-bookmark-regexp)
+(global-set-key (kbd "s-0") 'bm-remove-all-current-buffer)
+(global-set-key (kbd "s-)") 'bm-remove-all-all-buffers)
+(setq bm-restore-repository-on-load t)
+(setq bm-repository-file "~/.emacs.d/savefile/bm-bookmarks")
+(setq bm-buffer-persistence t)
+(setq bm-restore-repository-on-load t)
+(setq bm-cycle-all-buffers t)
+(setq bm-in-lifo-order t)
+(setq bm-persistent-face 'bm-face)
+(add-hook 'after-save-hook   #'(lambda nil
+                                 (bm-buffer-save-all)
+                                 (bm-repository-save)))
+(add-hook 'find-file-hooks   #'bm-buffer-restore)
+(add-hook 'after-revert-hook #'bm-buffer-restore)
+;; restore all currently saved bookmarks
+(bm-load-and-restore)
+
+
+;;;
+;;; general-conf.el ends here
+;;;

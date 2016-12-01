@@ -270,6 +270,7 @@ This will open file 'somefile' and set cursor on line 1234.
 * [wgrep](https://github.com/mhayashi1120/Emacs-wgrep) for editable grep buffers
 * [terraform-mode](https://github.com/syohex/emacs-terraform-mode)
 * [helm-ag](https://github.com/syohex/emacs-helm-ag) super search. (`brew install ag`)
+* [bm-bookmarks](https://github.com/joodland/bm)
 
 
 Here the key bindings added:
@@ -306,6 +307,14 @@ WSD <kbd>C-c C-e</kbd> | Export sequence diagram
 grep  <kbd>C-c C-p</kbd> | Enter editable grep mode
 wgrep <kbd>C-c C-C</kbd> | Save all changes and leave wgrep mode
 wgrep <kbd>C-c C-k</kbd> | Discard all changes and leave wgrep mode
+<kbd>CMD-1</kbd> or <kbd>f-5</kbd>| Toggle bookmark
+<kbd>CMD-2</kbd> or <kbd>f-6</kbd>| Previous bookmark
+<kbd>CMD-3</kbd> or <kbd>f-7</kbd>| Next bookmark
+<kbd>CMD-5</kbd> or <kbd>f-8</kbd>| Bookmark by regex
+<kbd>CMD-0</kbd> | Clear all bookmark in this buffer
+<kbd>CMD-S-0</kbd> | Clear all bookmark in all buffers
+
+
 
 
 
