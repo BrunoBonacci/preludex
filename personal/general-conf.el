@@ -257,8 +257,8 @@
 ;;
 (prelude-require-package 'helm-ag)
 (custom-set-variables
- '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --skip-vcs-ignores --ignore-dir target ")
- '(helm-ag-command-option "--all-text")
+ '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --skip-vcs-ignores --ignore-dir target")
+ '(helm-ag-command-option "") ;;--all-text not working in conjuction with --ignore-dir
  '(helm-ag-insert-at-point 'symbol))
 
 ;;
