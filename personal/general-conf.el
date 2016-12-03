@@ -57,8 +57,8 @@
 (set-face-attribute 'default nil :height 140)
 ;; hightlight modeline of active buffer
 (set-face-foreground 'mode-line "black")
-(set-face-background 'mode-line "green4")
-(set-face-background 'modeline-inactive "grey20")
+(set-face-background 'mode-line "grey30")
+(set-face-background 'modeline-inactive "grey10")
 (set-face-foreground 'mode-line-buffer-id "white")
 
 ;; disable scroll bars
