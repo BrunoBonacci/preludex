@@ -504,26 +504,10 @@ buffer. Passing prefix argument **BEFORE** =helm-M-x= **has no effect**.
 
 Keybinding         | Description
 -------------------|----------------------------------------------
-<<<<<<< HEAD
-<kbd>JK</kbd>      | Jump to a character(`avy-goto-char`)
-<kbd>JL</kbd>      | Jump to the beginning of a line(`avy-goto-line`)
-<kbd>JJ</kbd>      | Jump back to previous buffer(`prelude-switch-to-previous-buffer`)
-<kbd>UU</kbd>      | View edits as a tree(`undo-tree-visualize`)
-<kbd>XX</kbd>      | Executed extended command(`execute-extended-command`)
-<kbd>YY</kbd>      | Browse the kill ring(`browse-kill-ring`)
 <kbd>WS</kbd>      | Save frameset to register (same as <kbd>C-x r f</kbd>
 <kbd>WL</kbd>      | Load frameset to register (same as <kbd>C-x r j</kbd>
 <kbd>ZZ</kbd>      | Toggle current window zoom-in/zoom-out
 <kbd>CB</kbd>      | Takes the content of a the current line and create a comment box around it
-=======
-<kbd>jj</kbd>      | Jump to the beginning of a word(`avy-goto-word-1`)
-<kbd>jk</kbd>      | Jump to a character(`avy-goto-char`)
-<kbd>jl</kbd>      | Jump to the beginning of a line(`avy-goto-line`)
-<kbd>JJ</kbd>      | Jump back to previous buffer(`crux-switch-to-previous-buffer`)
-<kbd>uu</kbd>      | View edits as a tree(`undo-tree-visualize`)
-<kbd>xx</kbd>      | Executed extended command(`execute-extended-command`)
-<kbd>yy</kbd>      | Browse the kill ring(`browse-kill-ring`)
->>>>>>> f5f4d773f301dd80d0551055f6e3efdb0b5390b2
 
 ##### Disabling key-chords
 
