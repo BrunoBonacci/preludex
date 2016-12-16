@@ -318,7 +318,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 
 
 ;;
-;; aggressive-indent-mode (disabled as it cause slowdown)
+;; aggressive-indent-mode
 ;;
 (prelude-require-package 'aggressive-indent)
 (require 'aggressive-indent)
