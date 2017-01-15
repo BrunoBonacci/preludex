@@ -28,7 +28,8 @@
         (gotham-theme            gotham)
         (cyberpunk-theme         cyberpunk)
         (alect-themes            alect-dark)
-        (green-phosphor-theme    green-phosphor)))
+        (green-phosphor-theme    green-phosphor)
+        (dracula-theme           dracula)))
 
 
 (require 'dash)
@@ -51,7 +52,7 @@
 ;;
 ;; Setting the current theme
 ;;
-(load-theme-by-name 'gotham)
+(load-theme-by-name 'dracula)
 
 ;; change default font size
 (set-face-attribute 'default nil :height 140)
