@@ -54,8 +54,6 @@
 ;;
 (load-theme-by-name 'dracula)
 
-;; change default font size
-(set-face-attribute 'default nil :height 140)
 ;; hightlight modeline of active buffer
 (set-face-foreground 'mode-line "black")
 (set-face-background 'mode-line "grey25")
