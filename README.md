@@ -307,12 +307,13 @@ WSD <kbd>C-c C-e</kbd> | Export sequence diagram
 grep  <kbd>C-c C-p</kbd> | Enter editable grep mode
 wgrep <kbd>C-c C-C</kbd> | Save all changes and leave wgrep mode
 wgrep <kbd>C-c C-k</kbd> | Discard all changes and leave wgrep mode
-<kbd>CMD-1</kbd> or <kbd>f-5</kbd>| Toggle bookmark
-<kbd>CMD-2</kbd> or <kbd>f-6</kbd>| Previous bookmark
-<kbd>CMD-3</kbd> or <kbd>f-7</kbd>| Next bookmark
-<kbd>CMD-5</kbd> or <kbd>f-8</kbd>| Bookmark by regex
-<kbd>CMD-0</kbd> | Clear all bookmark in this buffer
-<kbd>CMD-S-0</kbd> | Clear all bookmark in all buffers
+<kbd>s-1</kbd> or <kbd>f-5</kbd>| Toggle bookmark
+<kbd>s-2</kbd> or <kbd>f-6</kbd>| Previous bookmark
+<kbd>s-3</kbd> or <kbd>f-7</kbd>| Next bookmark
+<kbd>s-5</kbd> or <kbd>f-8</kbd>| Bookmark by regex
+<kbd>s-0</kbd>     | Clear all bookmark in this buffer
+<kbd>s-S-0</kbd>   | Clear all bookmark in all buffers
+<bdb>s-return</kbd>  | Toggle current window zoom-in/zoom-out
 
 
 

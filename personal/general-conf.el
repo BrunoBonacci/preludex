@@ -204,6 +204,7 @@
       (delete-other-windows))))
 
 (key-chord-define-global "ZZ" 'window-toggle-zoom)
+(global-set-key (kbd "s-<return>") 'window-toggle-zoom)
 
 
 ;;
