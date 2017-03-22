@@ -310,6 +310,11 @@
 ;; restore all currently saved bookmarks
 (bm-load-and-restore)
 
+;;
+;; Disable warnings (like preceding-sexp)
+;;
+(setq warning-minimum-level :emergency)
+
 
 ;;;
 ;;; general-conf.el ends here
