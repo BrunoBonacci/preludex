@@ -165,7 +165,7 @@
   (message "Code formatted and copied in your clipboard."))
 
 
-(define-key cider-mode-map
+(define-key clojure-mode-map
   (kbd "C-M-|") #'format-code-region-rtf)
 
 
