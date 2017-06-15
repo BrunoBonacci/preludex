@@ -29,7 +29,10 @@
         (cyberpunk-theme         cyberpunk)
         (alect-themes            alect-dark)
         (green-phosphor-theme    green-phosphor)
-        (dracula-theme           dracula)))
+        (dracula-theme           dracula)
+        ;;light
+        (leuven-theme            leuven)
+        (color-theme-sanityinc-tomorrow sanityinc-tomorrow-blue)))
 
 
 (require 'dash)
@@ -53,6 +56,14 @@
 ;; Setting the current theme
 ;;
 (load-theme-by-name 'dracula)
+;; light theme
+;; (load-theme 'adwaita 't)
+;; (load-theme-by-name 'leuven)
+;;
+;; high contrast themes
+;; (load-theme-by-name 'green-phosphor)
+;; (load-theme-by-name 'sanityinc-tomorrow-blue)
+
 
 ;; hightlight modeline of active buffer
 (set-face-foreground 'mode-line "black")
