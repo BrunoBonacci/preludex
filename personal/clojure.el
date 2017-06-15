@@ -336,4 +336,5 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 ;;
 (prelude-require-package 'aggressive-indent)
 (require 'aggressive-indent)
-(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+;; Disabled for performance reasons
+;;(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
