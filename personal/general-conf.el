@@ -272,6 +272,12 @@
  '(helm-ag-command-option "") ;;--all-text not working in conjuction with --ignore-dir
  '(helm-ag-insert-at-point 'symbol))
 
+
+;;
+;; Install helm-fuzzy-find
+;;
+(prelude-require-package 'helm-fuzzy-find)
+
 ;;
 ;; Installing password-generator
 ;;
