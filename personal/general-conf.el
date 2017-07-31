@@ -333,6 +333,11 @@
 (setq warning-minimum-level :emergency)
 
 
+;;
+;; Transpose frame
+;;
+(prelude-require-package 'transpose-frame)
+
 ;;;
 ;;; general-conf.el ends here
 ;;;
