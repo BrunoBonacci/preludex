@@ -18,7 +18,10 @@
 
 ;; enable default font if present
 (if (member default-preferred-font (font-family-list))
-    (set-default-font default-preferred-font)
+    (progn
+      (add-to-list 'default-frame-alist
+                   `(font . ,default-preferred-font ))
+      (set-default-font default-preferred-font))
   (message (format "'%s' font not available" default-preferred-font)))
 
 ;; set default font size
