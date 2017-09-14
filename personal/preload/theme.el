@@ -12,16 +12,16 @@
 
 ;; set favourite font
 (defvar default-preferred-font "Roboto Mono Thin for Powerline"
-  "Select your default preferred font. This will be activated only if present.")
+  "Select your default preferred font.  This will be activated only if present.")
 (defvar default-preferred-font-size 150
-  "Select your preferred font size")
+  "Select your preferred font size.")
 
 ;; enable default font if present
 (if (member default-preferred-font (font-family-list))
     (progn
       (add-to-list 'default-frame-alist
-                   `(font . ,default-preferred-font ))
-      (set-default-font default-preferred-font))
+                   `(font . ,(concat default-preferred-font  "-" (number-to-string (/ default-preferred-font-size 10)))))
+      (set-frame-font default-preferred-font))
   (message (format "'%s' font not available" default-preferred-font)))
 
 ;; set default font size
