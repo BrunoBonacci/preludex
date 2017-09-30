@@ -1,6 +1,6 @@
 ;;; prelude-core.el --- Emacs Prelude: Core Prelude functions.
 ;;
-;; Copyright © 2011-2016 Bozhidar Batsov
+;; Copyright © 2011-2017 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -68,7 +68,7 @@ PROMPT sets the `read-string prompt."
     (if _after (ov-reset _ov))))
 
 (defun prelude-annotate-todo ()
-  "Put fringe marker on TODO: lines in the curent buffer."
+  "Put fringe marker on TODO: lines in the current buffer."
   (interactive)
   (ov-set (format "[[:space:]]*%s+[[:space:]]*TODO:" comment-start)
           'before-string

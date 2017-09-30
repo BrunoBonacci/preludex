@@ -1,6 +1,6 @@
 ;;; prelude-ido.el --- Ido setup
 ;;
-;; Copyright © 2011-2016 Bozhidar Batsov
+;; Copyright © 2011-2017 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -31,10 +31,10 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(prelude-require-packages '(flx-ido ido-ubiquitous smex))
+(prelude-require-packages '(flx-ido ido-completing-read+ smex))
 
 (require 'ido)
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
 (require 'flx-ido)
 
 (setq ido-enable-prefix nil

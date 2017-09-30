@@ -1,6 +1,6 @@
 ;;; prelude-global-keybindings.el --- Emacs Prelude: some useful keybindings.
 ;;
-;; Copyright © 2011-2016 Bozhidar Batsov
+;; Copyright © 2011-2017 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -75,7 +75,7 @@
 
 (define-key 'help-command (kbd "C-i") 'info-display-manual)
 
-;; replace zap-to-char functionaity with the more powerful zop-to-char
+;; replace zap-to-char functionality with the more powerful zop-to-char
 (global-set-key (kbd "M-z") 'zop-up-to-char)
 (global-set-key (kbd "M-Z") 'zop-to-char)
 
