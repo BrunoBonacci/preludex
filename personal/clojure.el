@@ -334,8 +334,15 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 ;;
 ;; Clean Clojure code
 ;;
+(defun clean-clojure-indent ()
+  (interactive)
+  (untabify (point-min) (point-max))
+  (indent-region (point-min) (point-max) nil)
+  (save-buffer))
+
 (defun clean-clojure ()
   (interactive)
+  (clean-clojure-indent)
   (let* ((content (replace-regexp-in-string
                    ")\\s-*\n+(def" ")\n\n\n\n(def"
                    (buffer-string))))
