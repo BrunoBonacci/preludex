@@ -9,6 +9,11 @@
 (setq windmove-wrap-around t )
 
 ;;
+;; tabsize
+;;
+(setq tab-width 2)
+
+;;
 ;; Disable guru warnings
 ;;
 (setq prelude-guru nil)
