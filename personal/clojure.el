@@ -306,7 +306,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
          (norm-title (upcase
                       (-trim-string
                        (replace-regexp-in-string "\\(.\\)" "\\1 " title))))
-         (decor-title (concat "---==| " norm-title " |==----" )))
+         (decor-title (concat "----==| " norm-title " |==----" )))
     (flet ((str-repeat (size char) (make-string size (string-to-char char))))
       (concat "\n"
               (str-repeat 80 ";") "\n"
