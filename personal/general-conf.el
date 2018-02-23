@@ -374,6 +374,27 @@
 (setq flymd-browser-open-function 'my-flymd-browser-function)
 
 
+;;
+;; Install GraphViz mode
+;;
+(prelude-require-package 'graphviz-dot-mode)
+(require 'graphviz-dot-mode)
+(define-key graphviz-dot-mode-map "\r"       'electric-graphviz-dot-terminate-line)
+(define-key graphviz-dot-mode-map "{"        'electric-graphviz-dot-open-brace)
+(define-key graphviz-dot-mode-map "}"        'electric-graphviz-dot-close-brace)
+(define-key graphviz-dot-mode-map ";"        'electric-graphviz-dot-semi)
+(define-key graphviz-dot-mode-map "\M-\t"    'graphviz-dot-complete-word)
+(define-key graphviz-dot-mode-map "\C-\M-q"  'graphviz-dot-indent-graph)
+(define-key graphviz-dot-mode-map "\C-c\C-p" 'graphviz-dot-preview)
+(define-key graphviz-dot-mode-map "\C-c\C-l" 'graphviz-turn-on-live-preview)
+(define-key graphviz-dot-mode-map "\C-c\C-o" 'graphviz-turn-off-live-preview)
+(define-key graphviz-dot-mode-map "\C-c\C-c" 'compile)
+(define-key graphviz-dot-mode-map "\C-c\C-v" 'graphviz-dot-view)
+(define-key graphviz-dot-mode-map "\C-c;"    'comment-region)
+(define-key graphviz-dot-mode-map "\C-c\C-u" 'graphviz-dot-uncomment-region)
+(setq graphviz-dot-view-edit-command nil)
+(setq graphviz-dot-view-command "open %s")
+
 ;;;
 ;;; general-conf.el ends here
 ;;;
