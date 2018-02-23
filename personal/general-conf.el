@@ -13,6 +13,14 @@
 ;;
 (setq tab-width 2)
 
+
+;;
+;; gpg password in minibuffer
+;;
+(setq epa-pinentry-mode 'loopback)
+(pinentry-start)
+
+
 ;;
 ;; Disable guru warnings
 ;;
