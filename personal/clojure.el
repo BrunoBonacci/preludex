@@ -57,6 +57,9 @@
 
 (unless (bound-and-true-p clojure-disable-font-locking)
 
+  (make-face 'keyword-no-bold-face)
+  (set-face-foreground 'keyword-no-bold-face "#ff79c6")
+
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
@@ -96,15 +99,15 @@
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(and\\)[[:space:]]"
                        (0 (progn (compose-region (match-beginning 1)
-                                                 (match-end 1) "⋏")
-                                 nil))))))
+                                                 (match-end 1) "∧")
+                                 keyword-no-bold-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(or\\)[[:space:]]"
                        (0 (progn (compose-region (match-beginning 1)
-                                                 (match-end 1) "⋎")
-                                 nil))))))
+                                                 (match-end 1) "∨")
+                                 keyword-no-bold-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
