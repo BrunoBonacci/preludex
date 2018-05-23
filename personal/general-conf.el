@@ -267,6 +267,12 @@
 
 
 ;;
+;; Use projectile find everywhere
+;;
+(setq projectile-require-project-root nil)
+
+
+;;
 ;; Using Helm by default everywhere
 ;;
 (require 'prelude-helm-everywhere)
@@ -292,12 +298,6 @@
 (prelude-require-package 'helm-fuzzy-find)
 
 
-;;
-;; Install helm-anything
-;;
-(prelude-require-packages '(anything helm-anything))
-(require 'helm-anything)
-(helm-anything-set-keys)
 ;;
 ;; Installing password-generator
 ;;
