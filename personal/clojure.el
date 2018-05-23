@@ -57,8 +57,6 @@
 
 (unless (bound-and-true-p clojure-disable-font-locking)
 
-  (make-face 'keyword-no-bold-face)
-  (set-face-foreground 'keyword-no-bold-face "#ff79c6")
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
@@ -100,14 +98,14 @@
       'clojure-mode `(("(\\(and\\)[[:space:]]"
                        (0 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∧")
-                                 keyword-no-bold-face))))))
+                                 nil))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(or\\)[[:space:]]"
                        (0 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∨")
-                                 keyword-no-bold-face))))))
+                                 nil))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
@@ -310,7 +308,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
                       (-trim-string
                        (replace-regexp-in-string "\\(.\\)" "\\1 " title))))
          (decor-title (concat "----==| " norm-title " |==----" )))
-    (flet ((str-repeat (size char) (make-string size (string-to-char char))))
+    (cl-flet ((str-repeat (size char) (make-string size (string-to-char char))))
       (concat "\n"
               (str-repeat 80 ";") "\n"
               ";;" (str-repeat (- size 4) " ") ";;\n"
