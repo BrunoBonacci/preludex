@@ -17,8 +17,13 @@
 ;;
 ;; gpg password in minibuffer
 ;;
+(require 'package)
+(setq package-check-signature nil) ;; TODO: hack for signature error on pientry
+(prelude-require-package 'pinentry)
 (setq epa-pinentry-mode 'loopback)
 (pinentry-start)
+(setq package-check-signature t)
+
 
 
 ;;
