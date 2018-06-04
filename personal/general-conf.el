@@ -81,7 +81,7 @@
 ;; hightlight modeline of active buffer
 (set-face-foreground 'mode-line "black")
 (set-face-background 'mode-line "grey25")
-(set-face-background 'modeline-inactive "grey10")
+(set-face-background 'mode-line-inactive "grey20")
 (set-face-foreground 'mode-line-buffer-id "white")
 
 ;; disable scroll bars
