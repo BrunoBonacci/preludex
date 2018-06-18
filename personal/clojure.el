@@ -357,3 +357,14 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 (require 'aggressive-indent)
 ;; Disabled for performance reasons
 ;;(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+
+
+;;
+;; inf-clojure for planck
+;; Start repl with M-x inf-clojure.
+;; set buffer to clojure-mode and then run inf-clojure-minor-mode
+;;
+(setq inf-clojure-program "planck")
+(setq inf-clojure-generic-cmd "planck -r")
+(prelude-require-package 'inf-clojure)
+(require 'inf-clojure)
