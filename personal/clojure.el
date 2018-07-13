@@ -57,83 +57,113 @@
 
 (unless (bound-and-true-p clojure-disable-font-locking)
 
+  (defface clojure-font-locking-ligatures-face
+    '(;;(t :inherit font-lock-keyword-face)
+      (t :weight normal :foreground "#ff79c6"))
+    "Face for highlighting  ligatures.")
+
+  (defvar clojure-font-locking-ligatures-face 'clojure-font-locking-ligatures-face)
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "λ")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("\\(#\\)("
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "ƒ")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("\\(#\\){"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∈")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(partial\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "Ƥ")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(comp\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "⨌")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(and\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∧")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(or\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∨")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(for\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∀")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(reduce \\+\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∑")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(reduce \\*\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∏")
-                                 nil))))))
+                                 clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
       'clojure-mode `(("(\\(reduce\\)[[:space:]]"
-                       (0 (progn (compose-region (match-beginning 1)
+                       (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "ℝ")
-                                 nil)))))))
+                                 clojure-font-locking-ligatures-face))))))
+
+  ;; -> LONG RIGHTWARDS ARROW
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(->\\)[[:space:]]"
+                       (1 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "⟶")
+                                 clojure-font-locking-ligatures-face))))))
+
+  ;; ->> LONG RIGHTWARDS DOUBLE ARROW
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("(\\(->>\\)[[:space:]]"
+                       (1 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "⟹")
+                                 clojure-font-locking-ligatures-face))))))
+
+  ;; => LONG RIGHTWARDS DOUBLE ARROW FROM BAR
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("[[:space:]]\\(=>\\)[[:space:]]"
+                       (0 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "⟾")
+                                 clojure-font-locking-ligatures-face)))))))
 
 
 ;;
