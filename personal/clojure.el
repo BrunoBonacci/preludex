@@ -66,7 +66,7 @@
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
+      'clojure-mode `(("(\\(fn\\)[\[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "λ")
                                  clojure-font-locking-ligatures-face))))))
@@ -87,56 +87,56 @@
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(partial\\)[[:space:]]"
+      'clojure-mode `(("(\\(partial\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "Ƥ")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(comp\\)[[:space:]]"
+      'clojure-mode `(("(\\(comp\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "⨌")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(and\\)[[:space:]]"
+      'clojure-mode `(("(\\(and\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∧")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(or\\)[[:space:]]"
+      'clojure-mode `(("(\\(or\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∨")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(for\\)[[:space:]]"
+      'clojure-mode `(("(\\(for\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∀")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(reduce \\+\\)[[:space:]]"
+      'clojure-mode `(("(\\(reduce \\+\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∑")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(reduce \\*\\)[[:space:]]"
+      'clojure-mode `(("(\\(reduce \\*\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "∏")
                                  clojure-font-locking-ligatures-face))))))
 
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(reduce\\)[[:space:]]"
+      'clojure-mode `(("(\\(reduce\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "ℝ")
                                  clojure-font-locking-ligatures-face))))))
@@ -144,7 +144,7 @@
   ;; -> LONG RIGHTWARDS ARROW
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(->\\)[[:space:]]"
+      'clojure-mode `(("(\\(->\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "⟶")
                                  clojure-font-locking-ligatures-face))))))
@@ -152,7 +152,7 @@
   ;; ->> LONG RIGHTWARDS DOUBLE ARROW
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("(\\(->>\\)[[:space:]]"
+      'clojure-mode `(("(\\(->>\\)[[:blank:]\n]"
                        (1 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "⟹")
                                  clojure-font-locking-ligatures-face))))))
@@ -160,7 +160,7 @@
   ;; => LONG RIGHTWARDS DOUBLE ARROW FROM BAR
   (eval-after-load 'clojure-mode
     '(font-lock-add-keywords
-      'clojure-mode `(("[[:space:]]\\(=>\\)[[:space:]]"
+      'clojure-mode `(("[[:blank:]\n]\\(=>\\)[[:blank:]\n]"
                        (0 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "⟾")
                                  clojure-font-locking-ligatures-face)))))))
