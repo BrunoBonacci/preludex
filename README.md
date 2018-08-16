@@ -362,8 +362,8 @@ wgrep <kbd>C-c C-k</kbd> | Discard all changes and leave wgrep mode
 <kbd>s-5</kbd> or <kbd>f-8</kbd>| Bookmark by regex
 <kbd>s-0</kbd>     | Clear all bookmark in this buffer
 <kbd>s-S-0</kbd>   | Clear all bookmark in all buffers
-<bdb>s-return</kbd>  | Toggle current window zoom-in/zoom-out
-
+<kdb>s-return</kbd>  | Toggle current window zoom-in/zoom-out
+<kbd>C-x 9</kbd>     | Sets the current window as Sticky so that it doesn't get replaced or closed.
 
 
 
