@@ -18,12 +18,19 @@
 ;; gpg password in minibuffer
 ;;
 (require 'package)
-(setq package-check-signature nil) ;; TODO: hack for signature error on pientry
+;;(setq package-check-signature nil) ;; TODO: hack for signature error on pientry
 (prelude-require-package 'pinentry)
 (setq epa-pinentry-mode 'loopback)
 (pinentry-start)
-(setq package-check-signature t)
+;;(setq package-check-signature t)
 
+
+;;
+;; config projectile
+;;
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 
 ;;
