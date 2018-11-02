@@ -162,7 +162,8 @@
 (if (not (file-exists-p "~/.TODO.org"))
     (append-to-file default-message nil "~/.TODO.org"))
 ;; open all existing ones
-(mapcar 'find-file  (directory-files "~/" t "^.TODO.*.org"))
+;; TODO: removed because problem with helm-ag
+;;(mapcar 'find-file  (directory-files "~/" t "^.TODO.*.org"))
 
 
 ;;
@@ -299,7 +300,7 @@
 ;;
 (prelude-require-package 'helm-ag)
 (custom-set-variables
- '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --skip-vcs-ignores --ignore-dir target")
+ '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --ignore-dir target")
  '(helm-ag-command-option "") ;;--all-text not working in conjuction with --ignore-dir
  '(helm-ag-insert-at-point 'symbol))
 
