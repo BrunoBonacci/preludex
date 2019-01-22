@@ -288,9 +288,18 @@
 ;;
 ;; Install clojure-cheatsheet for emacs
 ;;
-(prelude-require-package 'clojure-cheatsheet)
-(define-key cider-mode-map
-  (kbd "C-c C-s") 'clojure-cheatsheet)
+;;(prelude-require-package 'clojure-cheatsheet)
+;;
+;; (define-key cider-mode-map
+;;  (kbd "C-c C-s") 'clojure-cheatsheet)
+
+
+
+;;
+;; Installing helm-cider
+;;
+(prelude-require-package 'helm-cider)
+(helm-cider-mode 1)
 
 
 ;;
@@ -311,7 +320,10 @@
 (setq cider-auto-select-error-buffer nil)
 (setq cider-show-error-buffer nil)
 (define-key cider-mode-map
-  (kbd "C-c e") 'cider-visit-error-buffer)
+  (kbd "C-c e") (lambda ()
+                   (interactive)
+                   (let ((method (cl-find ?x cider-selector-methods :key #'car)))
+                     (funcall (cl-third method)))))
 
 
 ;;

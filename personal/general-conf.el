@@ -57,7 +57,9 @@
         (dracula-theme           dracula)
         ;;light
         (leuven-theme            leuven)
-        (color-theme-sanityinc-tomorrow sanityinc-tomorrow-blue)))
+        ;;(spacemacs-theme         spacemacs-light-theme)
+        (color-theme-sanityinc-tomorrow sanityinc-tomorrow-blue)
+        (color-theme-sanityinc-tomorrow sanityinc-tomorrow-day)))
 
 
 (require 'dash)
@@ -88,6 +90,7 @@
 ;; high contrast themes
 ;; (load-theme-by-name 'green-phosphor)
 ;; (load-theme-by-name 'sanityinc-tomorrow-blue)
+;; (load-theme-by-name 'sanityinc-tomorrow-day)
 
 
 ;; hightlight modeline of active buffer
@@ -162,6 +165,7 @@
 (if (not (file-exists-p "~/.TODO.org"))
     (append-to-file default-message nil "~/.TODO.org"))
 ;; open all existing ones
+;; TODO: removed because problem with helm-ag
 (mapcar 'find-file  (directory-files "~/" t "^.TODO.*.org"))
 
 
@@ -299,7 +303,7 @@
 ;;
 (prelude-require-package 'helm-ag)
 (custom-set-variables
- '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --skip-vcs-ignores --ignore-dir target")
+ '(helm-ag-base-command "ag --nocolor --nogroup --ignore-case --ignore-dir target")
  '(helm-ag-command-option "") ;;--all-text not working in conjuction with --ignore-dir
  '(helm-ag-insert-at-point 'symbol))
 
@@ -406,6 +410,14 @@
 (define-key graphviz-dot-mode-map "\C-c\C-u" 'graphviz-dot-uncomment-region)
 (setq graphviz-dot-view-edit-command nil)
 (setq graphviz-dot-view-command "open %s")
+
+
+;;
+;; start daemon server
+;;
+;; Start server and set directory
+(setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
+(server-start)
 
 ;;;
 ;;; general-conf.el ends here
