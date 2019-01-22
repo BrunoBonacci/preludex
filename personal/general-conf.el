@@ -360,8 +360,6 @@
                                  (bm-repository-save)))
 (add-hook 'find-file-hooks   #'bm-buffer-restore)
 (add-hook 'after-revert-hook #'bm-buffer-restore)
-;; restore all currently saved bookmarks
-(bm-load-and-restore)
 
 ;;
 ;; Disable warnings (like preceding-sexp)

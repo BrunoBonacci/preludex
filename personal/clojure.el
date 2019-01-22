@@ -318,12 +318,12 @@
 ;; Error buffer
 ;;
 (setq cider-auto-select-error-buffer nil)
-(setq cider-show-error-buffer nil)
-(define-key cider-mode-map
-  (kbd "C-c e") (lambda ()
-                   (interactive)
-                   (let ((method (cl-find ?x cider-selector-methods :key #'car)))
-                     (funcall (cl-third method)))))
+;;(setq cider-show-error-buffer nil)
+;;(define-key cider-mode-map
+;;  (kbd "C-c e") (lambda ()
+;;                   (interactive)
+;;                   (let ((method (cl-find ?x cider-selector-methods :key #'car)))
+;;                     (funcall (cl-third method)))))
 
 
 ;;
