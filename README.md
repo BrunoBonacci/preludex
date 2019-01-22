@@ -16,11 +16,12 @@ library to the mix. The final product offers an easy to use Emacs
 configuration for Emacs newcomers and lots of additional power for
 Emacs power users.
 
-Prelude is compatible **ONLY with GNU Emacs 24.4+**. In general you're
+Prelude is compatible **ONLY with GNU Emacs 25.1+**. In general you're
 advised to always run Prelude with the latest Emacs - currently
-**25.2**.
+**26.1**.
 
 You can support the development of Prelude via
+[PayPal](https://www.paypal.me/bbatsov),
 [Salt](https://bountysource.com/teams/prelude),
 [Patreon](https://www.patreon.com/bbatsov) and
 [Liberapay](https://liberapay.com/bbatsov/donate).
@@ -800,11 +801,9 @@ You can always disable the improved sorting algorithm all together like this:
 (flx-ido-mode -1)
 ```
 
-### Windows compatibility
+## User Manual
 
-While everything in Prelude should work fine in Windows, I test it only
-with GNU/Linux & macOS, so there might be Windows-specific problems from time to
-time. This situation will probably improve over time.
+Check out our [user manual](https://prelude.emacsredux.com) for more information.
 
 ## Support
 
