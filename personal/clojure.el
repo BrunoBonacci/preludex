@@ -288,9 +288,18 @@
 ;;
 ;; Install clojure-cheatsheet for emacs
 ;;
-(prelude-require-package 'clojure-cheatsheet)
-(define-key cider-mode-map
-  (kbd "C-c C-s") 'clojure-cheatsheet)
+;;(prelude-require-package 'clojure-cheatsheet)
+;;
+;; (define-key cider-mode-map
+;;  (kbd "C-c C-s") 'clojure-cheatsheet)
+
+
+
+;;
+;; Installing helm-cider
+;;
+(prelude-require-package 'helm-cider)
+(helm-cider-mode 1)
 
 
 ;;
