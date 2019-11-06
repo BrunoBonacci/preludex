@@ -163,8 +163,24 @@
       'clojure-mode `(("[[:blank:]\n]\\(=>\\)[[:blank:]\n]"
                        (0 (progn (compose-region (match-beginning 1)
                                                  (match-end 1) "⟾")
-                                 clojure-font-locking-ligatures-face)))))))
+                                 clojure-font-locking-ligatures-face))))))
 
+  ;; u/log, mu/log, u/log*, mu/log*
+  (eval-after-load 'clojure-mode
+    '(font-lock-add-keywords
+      'clojure-mode `(("[([:blank:]]\\(m?u\\)/\\(log\\*\\|log\\|trace\\)[[:blank:]\n]"
+                       (1 (progn (compose-region (match-beginning 1)
+                                                 (match-end 1) "μ")
+                                 clojure-font-locking-ligatures-face))))))
+  )
+
+;;
+;; Test the regex here
+;;
+;; (re-search-forward "[([:blank:]]\\(m?u\\)/\\(log\\*\\|log\\|trace\\)[[:blank:]\n]")
+;;
+;; (u/trace )
+;;
 
 ;;
 ;; Couple of smart copy and paste on s-exprs
@@ -383,11 +399,13 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (indent-region (point-min) (point-max) nil)
   (save-buffer))
 
+
 (defun clean-clojure ()
   (interactive)
   (clean-clojure-indent)
   (let* ((content (replace-regexp-in-string
-                   ")\\s-*\n+(def" ")\n\n\n\n(def"
+                   ")\\s-*\n+\\((def[^ ]*\\|(comment\\|(facts?\\|;\\)"
+                   ")\n\n\n\n\\1"
                    (buffer-string))))
     (erase-buffer)
     (insert content)))
