@@ -428,3 +428,10 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 (setq inf-clojure-generic-cmd "planck -r")
 (prelude-require-package 'inf-clojure)
 (require 'inf-clojure)
+
+;;
+;; better identation for specific functions.
+;;
+(define-clojure-indent
+  (facts '(1 (1)))
+  (fact  '(1 (1))))
