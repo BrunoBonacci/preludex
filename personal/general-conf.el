@@ -268,7 +268,8 @@
 (prelude-require-package 'wsd-mode)
 (require 'wsd-mode)
 (add-hook 'wsd-mode-hook 'company-mode)
-(setq wsd-style "modern-blue")
+;;(setq wsd-style "modern-blue")
+(setq wsd-style "roundgreen")
 (setq wsd-style-altern "napkin")
 
 (defun wsd-show-diagram-inline-alternative ()
@@ -416,6 +417,17 @@
 ;; Start server and set directory
 (setq server-socket-dir (format "/tmp/emacs%d" (user-uid)))
 (server-start)
+
+;;
+;; Multiple cursors
+;;
+(prelude-require-package 'multiple-cursors)
+(global-set-key (kbd "C-M-s-. C-M-s-.") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+
 
 ;;;
 ;;; general-conf.el ends here
