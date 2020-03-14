@@ -428,6 +428,10 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 
+;;
+;; Add key binding for μ
+;;
+(global-set-key (kbd "M-M") (lambda () (interactive) (insert "μ")))
 
 ;;;
 ;;; general-conf.el ends here
