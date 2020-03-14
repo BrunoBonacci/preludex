@@ -429,6 +429,14 @@
 
 
 ;;
+;; Ace-jump
+;;
+(prelude-require-package 'ace-jump-mode)
+(define-key global-map (kbd "C-c C-SPC") 'ace-jump-mode)
+
+
+
+;;
 ;; Add key binding for μ
 ;;
 (global-set-key (kbd "M-M") (lambda () (interactive) (insert "μ")))
