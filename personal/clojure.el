@@ -435,3 +435,13 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 (define-clojure-indent
   (facts '(1 (1)))
   (fact  '(1 (1))))
+
+
+;;
+;; Show matching parens
+;;
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+(set-face-background 'show-paren-match nil)
+(set-face-foreground 'show-paren-match "firebrick1" )
+(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
