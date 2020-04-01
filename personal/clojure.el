@@ -449,3 +449,26 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
 
 (add-hook 'clojure-mode-hook #'enhanced-show-parens)
+
+
+;;
+;; Hack for cider-popup eval inspired by
+;; from: https://github.com/clojure-emacs/cider/issues/2580#issuecomment-606708789
+;;
+(require 'cider)
+(defun cider-popup-eval-handler (&optional buffer)
+  "Make a handler for printing evaluation results in popup BUFFER.
+This is used by pretty-printing commands."
+  (nrepl-make-response-handler
+   (or buffer (current-buffer))
+   (lambda (buffer value)
+     (cider-emit-into-popup-buffer buffer (ansi-color-apply value) nil t))
+   (lambda (buffer out)
+     (cider-emit-into-popup-buffer buffer (ansi-color-apply out) nil t))
+   (lambda (buffer err)
+     (cider-emit-into-popup-buffer buffer (ansi-color-apply err) nil t))
+   nil
+   nil
+   nil
+   (lambda (buffer warning)
+     (cider-emit-into-popup-buffer buffer warning 'font-lock-warning-face t))))
