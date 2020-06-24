@@ -440,6 +440,7 @@
 ;; Add key binding for μ
 ;;
 (global-set-key (kbd "M-M") (lambda () (interactive) (insert "μ")))
+(global-set-key (kbd "M-s-M") (lambda () (interactive) (insert "***μ/log***")))
 
 ;;;
 ;;; general-conf.el ends here

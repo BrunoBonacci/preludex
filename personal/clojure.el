@@ -410,14 +410,6 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     (erase-buffer)
     (insert content)))
 
-;;
-;; aggressive-indent-mode
-;;
-(prelude-require-package 'aggressive-indent)
-(require 'aggressive-indent)
-;; Disabled for performance reasons
-;;(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
-
 
 ;;
 ;; inf-clojure for planck
@@ -430,11 +422,23 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 (require 'inf-clojure)
 
 ;;
-;; better identation for specific functions.
+;; Clojure indent style
 ;;
+(setq clojure-indent-style 'always-indent)
 (define-clojure-indent
   (facts '(1 (1)))
-  (fact  '(1 (1))))
+  (fact  '(1 (1)))
+  (->    '(1 (1)))
+  (->>   '(1 (1))))
+
+
+;;
+;; aggressive-indent-mode
+;;
+(prelude-require-package 'aggressive-indent)
+(require 'aggressive-indent)
+(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+
 
 
 ;;
