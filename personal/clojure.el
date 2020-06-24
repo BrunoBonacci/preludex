@@ -476,3 +476,107 @@ This is used by pretty-printing commands."
    nil
    (lambda (buffer warning)
      (cider-emit-into-popup-buffer buffer warning 'font-lock-warning-face t))))
+
+
+;;
+;; switch java
+;;
+(setq JAVA_BASE "/Library/Java/JavaVirtualMachines")
+
+(defun switch-java--versions ()
+  (seq-remove
+   (lambda (a) (or (equal a ".") (equal a "..")))
+   (directory-files JAVA_BASE)))
+
+(defun switch-java--save-env ()
+  ;; store original PATH and JAVA_HOME
+  (when (not (boundp 'SW_JAVA_PATH))
+    (setq SW_JAVA_PATH (getenv "PATH")))
+  (when (not (boundp 'SW_JAVA_HOME))
+    (setq SW_JAVA_HOME (getenv "JAVA_HOME"))))
+
+(defun switch-java ()
+  (interactive)
+  ;; store original PATH and JAVA_HOME
+  (switch-java--save-env)
+
+  (let ((ver (completing-read
+              "Which Java: "
+              (seq-map-indexed
+               (lambda (e i) (list e i)) (switch-java--versions))
+              nil t "")))
+    ;; switch java version
+    (setenv "JAVA_HOME" (concat JAVA_BASE "/" ver "/Contents/Home"))
+    (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH)))
+  ;; show version
+  (switch-java-which-version?))
+
+
+(defun switch-java-default ()
+  (interactive)
+  ;; store original PATH and JAVA_HOME
+  (switch-java--save-env)
+
+  ;; switch java version
+  (setenv "JAVA_HOME" SW_JAVA_HOME)
+  (setenv "PATH" SW_JAVA_PATH)
+  ;; show version
+  (switch-java-which-version?))
+
+
+(defun switch-java-which-version? ()
+  (interactive)
+  ;; switch java version
+  (message (concat "Java HOME: " (getenv "JAVA_HOME"))))
+
+
+
+
+(defun switch-java8-graalvm ()
+  (interactive)
+  ;; store original PATH and JAVA_HOME
+  (switch-java--save-env)
+
+  ;; switch java version
+  (setenv "JAVA_HOME" (concat JAVA_BASE "/graalvm-ce-java08-20.0.0/Contents/Home"))
+  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
+  ;; show version
+  (switch-java-which-version?))
+
+
+(defun switch-java8-perf ()
+  (interactive)
+  ;; store original PATH and JAVA_HOME
+  (switch-java--save-env)
+
+  (setenv "JAVA_HOME" (concat JAVA_BASE "/graalvm-ce-java08-19.3.0.2/Contents/Home"))
+  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
+  ;; show version
+  (switch-java-which-version?))
+
+
+(defun switch-java8 ()
+  (interactive)
+  ;; store original PATH and JAVA_HOME
+  (switch-java--save-env)
+
+  ;; switch java version
+  (setenv "JAVA_HOME" (concat JAVA_BASE "/jdk-08.0.0u252.jdk/Contents/Home"))
+  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
+  ;; show version
+  (switch-java-which-version?))
+
+
+(defun switch-java14 ()
+  (interactive)
+  ;; store original PATH and JAVA_HOME
+  (switch-java--save-env)
+
+  ;; switch java version
+  (setenv "JAVA_HOME" (concat JAVA_BASE "/jdk-14.0.0b36.jdk/Contents/Home"))
+  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
+  ;; show version
+  (switch-java-which-version?))
+
+
+;;; clojure.el ends here
