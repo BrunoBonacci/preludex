@@ -468,9 +468,9 @@ This is used by pretty-printing commands."
    (lambda (buffer value)
      (cider-emit-into-popup-buffer buffer (ansi-color-apply value) nil t))
    (lambda (buffer out)
-     (cider-emit-into-popup-buffer buffer (ansi-color-apply out) nil t))
+     (cider-emit-into-popup-buffer buffer (ansi-color-apply (concat "\n" out)) nil t))
    (lambda (buffer err)
-     (cider-emit-into-popup-buffer buffer (ansi-color-apply err) nil t))
+     (cider-emit-into-popup-buffer buffer (ansi-color-apply (concat "\n" err)) nil t))
    nil
    nil
    nil
