@@ -483,19 +483,26 @@ This is used by pretty-printing commands."
 ;;
 (setq JAVA_BASE "/Library/Java/JavaVirtualMachines")
 
+;;
+;; This function returns the list of installed
+;;
 (defun switch-java--versions ()
+  "Return the list of installed JDK."
   (seq-remove
    (lambda (a) (or (equal a ".") (equal a "..")))
    (directory-files JAVA_BASE)))
 
+
 (defun switch-java--save-env ()
-  ;; store original PATH and JAVA_HOME
+  "Store original PATH and JAVA_HOME."
   (when (not (boundp 'SW_JAVA_PATH))
     (setq SW_JAVA_PATH (getenv "PATH")))
   (when (not (boundp 'SW_JAVA_HOME))
     (setq SW_JAVA_HOME (getenv "JAVA_HOME"))))
 
+
 (defun switch-java ()
+  "List the installed JDKs and enable to switch the JDK in use."
   (interactive)
   ;; store original PATH and JAVA_HOME
   (switch-java--save-env)
@@ -507,12 +514,14 @@ This is used by pretty-printing commands."
               nil t "")))
     ;; switch java version
     (setenv "JAVA_HOME" (concat JAVA_BASE "/" ver "/Contents/Home"))
-    (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH)))
+    (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java")
+                           ":" SW_JAVA_PATH)))
   ;; show version
   (switch-java-which-version?))
 
 
 (defun switch-java-default ()
+  "Restore the default Java version."
   (interactive)
   ;; store original PATH and JAVA_HOME
   (switch-java--save-env)
@@ -525,55 +534,21 @@ This is used by pretty-printing commands."
 
 
 (defun switch-java-which-version? ()
+  "Display the current version selected Java version."
   (interactive)
-  ;; switch java version
+  ;; displays the current java version
   (message (concat "Java HOME: " (getenv "JAVA_HOME"))))
 
 
-
-
-(defun switch-java8-graalvm ()
-  (interactive)
-  ;; store original PATH and JAVA_HOME
-  (switch-java--save-env)
-
-  ;; switch java version
-  (setenv "JAVA_HOME" (concat JAVA_BASE "/graalvm-ce-java08-20.0.0/Contents/Home"))
-  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
-  ;; show version
-  (switch-java-which-version?))
-
-
+;;
+;; Version used in (my) perf measurement
+;;
 (defun switch-java8-perf ()
   (interactive)
   ;; store original PATH and JAVA_HOME
   (switch-java--save-env)
 
   (setenv "JAVA_HOME" (concat JAVA_BASE "/graalvm-ce-java08-19.3.0.2/Contents/Home"))
-  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
-  ;; show version
-  (switch-java-which-version?))
-
-
-(defun switch-java8 ()
-  (interactive)
-  ;; store original PATH and JAVA_HOME
-  (switch-java--save-env)
-
-  ;; switch java version
-  (setenv "JAVA_HOME" (concat JAVA_BASE "/jdk-08.0.0u252.jdk/Contents/Home"))
-  (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
-  ;; show version
-  (switch-java-which-version?))
-
-
-(defun switch-java14 ()
-  (interactive)
-  ;; store original PATH and JAVA_HOME
-  (switch-java--save-env)
-
-  ;; switch java version
-  (setenv "JAVA_HOME" (concat JAVA_BASE "/jdk-14.0.0b36.jdk/Contents/Home"))
   (setenv "PATH" (concat (concat (getenv "JAVA_HOME") "/bin/java") ":" SW_JAVA_PATH))
   ;; show version
   (switch-java-which-version?))
