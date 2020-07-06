@@ -325,47 +325,48 @@ This will open file 'somefile' and set cursor on line 1234.
 
 Here the key bindings added:
 
-Keybinding          | Description
---------------------|------------------------------------------------------------
-<kbd>C-RET</kbd>    | Rectangle selection
-<kbd>M-SPC</kbd>    | Delete whitespace except one
-<kbd>M-s-left</kbd> | Move between windows like in shell's panels
-<kbd>M-s-right</kbd>|                    "
-<kbd>M-s-up</kbd>   |                    "
-<kbd>M-s-down</kbd> |                    "
-shell <kbd>up</kbd>   | More natural up/down behaviour in REPL to load previous/next command
-shell <kbd>down</kbd> | More natural up/down behaviour in REPL to load previous/next command
-REPL <kbd>up</kbd>    | More natural up/down behaviour in REPL to load previous/next command
-REPL <kbd>down</kbd>  | More natural up/down behaviour in REPL to load previous/next command
-Clojure <kbd>C-S-d</kbd> | Duplicate next `sexp`
-Clojure <kbd>C-S-c</kbd> | Copy next `sexp`
-Clojure <kbd>C-S-k</kbd> | Kill/Delete next `sexp`
-Clojure <kbd>C-;</kbd>| Send last `sexp` to the REPL and evaluate it
-Clojure <kbd>C-M-;</kbd>| Send top level `sexp` to the REPL and evaluate it
-Clojure <kbd>C-c C-s</kbd>| Open interactive Clojure cheatsheet
-Clojure <kbd>C-c C-r *refactor-keys*</kbd> | Execute the specified refactoring [see list](https://github.com/clojure-emacs/clj-refactor.el/wiki)
-<kbd>C-x w</kbd>      | Start [Elfeed](https://github.com/skeeto/elfeed)
-<kbd>C-x p</kbd>      | Start [Prodigy](https://github.com/rejeep/prodigy.el)
-<kbd>C-x C-/</kbd>    | Jump to dired with focus on current file.
-Rest <kbd>C-c C-v</kbd> | Send request at point and show result in popup
-<kbd>C-c t</kbd>      | Open terminal
-<kbd>C-c p p</kbd>    | Open known projects
-<kbd>C-c p s g</kbd>  | Search in current project
-WSD <kbd>C-c C-c</kbd> | Create sequence diagram
-WSD <kbd>C-c C-a</kbd> | Create sequence diagram in alternative style
-WSD <kbd>C-c C-e</kbd> | Export sequence diagram
-grep  <kbd>C-c C-p</kbd> | Enter editable grep mode
-wgrep <kbd>C-c C-C</kbd> | Save all changes and leave wgrep mode
-wgrep <kbd>C-c C-k</kbd> | Discard all changes and leave wgrep mode
-<kbd>s-1</kbd> or <kbd>f-5</kbd>| Toggle bookmark
-<kbd>s-2</kbd> or <kbd>f-6</kbd>| Previous bookmark
-<kbd>s-3</kbd> or <kbd>f-7</kbd>| Next bookmark
-<kbd>s-5</kbd> or <kbd>f-8</kbd>| Bookmark by regex
-<kbd>s-0</kbd>     | Clear all bookmark in this buffer
-<kbd>s-S-0</kbd>   | Clear all bookmark in all buffers
-<kdb>s-return</kbd>  | Toggle current window zoom-in/zoom-out
-<kbd>C-x 9</kbd>     | Sets the current window as Sticky so that it doesn't get replaced or closed.
-
+| Keybinding                                 | Description                                                                                         |
+|--------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| <kbd>C-RET</kbd>                           | Rectangle selection                                                                                 |
+| <kbd>M-SPC</kbd>                           | Delete whitespace except one                                                                        |
+| <kbd>M-s-left</kbd>                        | Move between windows like in shell's panels                                                         |
+| <kbd>M-s-right</kbd>                       | ''                                                                                                  |
+| <kbd>M-s-up</kbd>                          | ''                                                                                                  |
+| <kbd>M-s-down</kbd>                        | ''                                                                                                  |
+| shell <kbd>up</kbd>                        | More natural up/down behaviour in REPL to load previous/next command                                |
+| shell <kbd>down</kbd>                      | More natural up/down behaviour in REPL to load previous/next command                                |
+| REPL <kbd>up</kbd>                         | More natural up/down behaviour in REPL to load previous/next command                                |
+| REPL <kbd>down</kbd>                       | More natural up/down behaviour in REPL to load previous/next command                                |
+| Clojure <kbd>C-S-d</kbd>                   | Duplicate next `sexp`                                                                               |
+| Clojure <kbd>C-S-c</kbd>                   | Copy next `sexp`                                                                                    |
+| Clojure <kbd>C-S-k</kbd>                   | Kill/Delete next `sexp`                                                                             |
+| Clojure <kbd>C-;</kbd>                     | Send last `sexp` to the REPL and evaluate it                                                        |
+| Clojure <kbd>C-M-;</kbd>                   | Send top level `sexp` to the REPL and evaluate it                                                   |
+| Clojure <kbd>C-u C-c C-v C-f C-e</kbd>     | Eval last `sexp` and pretty-print result in a comment                                               |
+| Clojure <kbd>C-c C-s</kbd>                 | Open interactive Clojure cheatsheet                                                                 |
+| Clojure <kbd>C-c C-r *refactor-keys*</kbd> | Execute the specified refactoring [see list](https://github.com/clojure-emacs/clj-refactor.el/wiki) |
+| <kbd>C-x w</kbd>                           | Start [Elfeed](https://github.com/skeeto/elfeed)                                                    |
+| <kbd>C-x p</kbd>                           | Start [Prodigy](https://github.com/rejeep/prodigy.el)                                               |
+| <kbd>C-x C-/</kbd>                         | Jump to dired with focus on current file.                                                           |
+| Rest <kbd>C-c C-v</kbd>                    | Send request at point and show result in popup                                                      |
+| <kbd>C-c t</kbd>                           | Open terminal                                                                                       |
+| <kbd>C-c p p</kbd>                         | Open known projects                                                                                 |
+| <kbd>C-c p s g</kbd>                       | Search in current project                                                                           |
+| WSD <kbd>C-c C-c</kbd>                     | Create sequence diagram                                                                             |
+| WSD <kbd>C-c C-a</kbd>                     | Create sequence diagram in alternative style                                                        |
+| WSD <kbd>C-c C-e</kbd>                     | Export sequence diagram                                                                             |
+| grep  <kbd>C-c C-p</kbd>                   | Enter editable grep mode                                                                            |
+| wgrep <kbd>C-c C-C</kbd>                   | Save all changes and leave wgrep mode                                                               |
+| wgrep <kbd>C-c C-k</kbd>                   | Discard all changes and leave wgrep mode                                                            |
+| <kbd>s-1</kbd> or <kbd>f-5</kbd>           | Toggle bookmark                                                                                     |
+| <kbd>s-2</kbd> or <kbd>f-6</kbd>           | Previous bookmark                                                                                   |
+| <kbd>s-3</kbd> or <kbd>f-7</kbd>           | Next bookmark                                                                                       |
+| <kbd>s-5</kbd> or <kbd>f-8</kbd>           | Bookmark by regex                                                                                   |
+| <kbd>s-0</kbd>                             | Clear all bookmark in this buffer                                                                   |
+| <kbd>s-S-0</kbd>                           | Clear all bookmark in all buffers                                                                   |
+| <kdb>s-return</kbd>                        | Toggle current window zoom-in/zoom-out                                                              |
+| <kbd>C-x 9</kbd>                           | Sets the current window as Sticky so that it doesn't get replaced or closed.                        |
+| <kbd>M-x switch-java</kbd>                 | To select and switch between installed JDK versions                                                 |
 
 
 
