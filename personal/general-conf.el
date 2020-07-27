@@ -442,6 +442,14 @@
 (global-set-key (kbd "M-M") (lambda () (interactive) (insert "μ")))
 (global-set-key (kbd "M-s-M") (lambda () (interactive) (insert "***μ/log***")))
 
+
+
+;;
+;; Add markdown-toc to generate the table of contents.
+;;
+(prelude-require-package 'markdown-toc)
+
+
 ;;;
 ;;; general-conf.el ends here
 ;;;
