@@ -57,6 +57,7 @@
         (dracula-theme           dracula)
         ;;light
         (leuven-theme            leuven)
+        (espresso-theme          espresso)
         ;;(spacemacs-theme         spacemacs-light-theme)
         (color-theme-sanityinc-tomorrow sanityinc-tomorrow-blue)
         (color-theme-sanityinc-tomorrow sanityinc-tomorrow-day)))
@@ -82,22 +83,46 @@
 ;;
 ;; Setting the current theme
 ;;
-(load-theme-by-name 'dracula)
-;; light theme
-;; (load-theme 'adwaita 't)
-;; (load-theme-by-name 'leuven)
-;;
-;; high contrast themes
-;; (load-theme-by-name 'green-phosphor)
-;; (load-theme-by-name 'sanityinc-tomorrow-blue)
-;; (load-theme-by-name 'sanityinc-tomorrow-day)
+
+(defun switch-to-light-theme ()
+  (interactive)
+  (progn
+    ;; load selected theme
+    (load-theme-by-name 'sanityinc-tomorrow-day)
+    ;; set font
+    (setq default-preferred-font "Victor Mono")
+    (set-frame-font default-preferred-font nil t)
+    (set-face-attribute 'default nil :height (+ 5 default-preferred-font-size))
+    ;; hightlight modeline of active buffer
+    (set-face-foreground 'mode-line "black")
+    (set-face-background 'mode-line "DarkSlateGray2")
+    (set-face-background 'mode-line-inactive "grey20")
+    (set-face-foreground 'mode-line-buffer-id "white")
+    (set-face-background hl-line-face "gray95")
+    ))
+
+(defun switch-to-dark-theme ()
+  (interactive)
+  (progn
+    ;; load selected theme
+    (load-theme-by-name 'dracula)
+    ;;(load-theme-by-name 'gotham)
+    ;; set font
+    (setq default-preferred-font "Roboto Mono Thin for Powerline")
+    (set-frame-font default-preferred-font nil t)
+    (set-face-attribute 'default nil :height default-preferred-font-size)
+    ;; hightlight modeline of active buffer
+    (set-face-foreground 'mode-line "black")
+    (set-face-background 'mode-line "green4")
+    (set-face-background 'mode-line-inactive "grey20")
+    (set-face-foreground 'mode-line-buffer-id "white")
+    ))
 
 
-;; hightlight modeline of active buffer
-(set-face-foreground 'mode-line "black")
-(set-face-background 'mode-line "grey25")
-(set-face-background 'mode-line-inactive "grey20")
-(set-face-foreground 'mode-line-buffer-id "white")
+(switch-to-dark-theme)
+;;(switch-to-light-theme)
+
+
 
 ;; disable scroll bars
 (if (display-graphic-p)
