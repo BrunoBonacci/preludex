@@ -84,15 +84,22 @@
 ;; Setting the current theme
 ;;
 
+(defun load-set-font (font-name size)
+  (if (member font-name (font-family-list))
+      (progn
+        (add-to-list 'default-frame-alist
+                     `(font . ,(concat font-name  "-" (number-to-string (/ size 10)))))
+        (set-frame-font font-name nil t)
+        (set-face-attribute 'default nil :height size))))
+
+
 (defun switch-to-light-theme ()
   (interactive)
   (progn
     ;; load selected theme
     (load-theme-by-name 'sanityinc-tomorrow-day)
     ;; set font
-    (setq default-preferred-font "Victor Mono")
-    (set-frame-font default-preferred-font nil t)
-    (set-face-attribute 'default nil :height (+ 5 default-preferred-font-size))
+    (load-set-font "Victor Mono" (+ 5 default-preferred-font-size))
     ;; hightlight modeline of active buffer
     (set-face-foreground 'mode-line "black")
     (set-face-background 'mode-line "DarkSlateGray2")
@@ -106,20 +113,33 @@
   (progn
     ;; load selected theme
     (load-theme-by-name 'dracula)
-    ;;(load-theme-by-name 'gotham)
     ;; set font
-    (setq default-preferred-font "Roboto Mono Thin for Powerline")
-    (set-frame-font default-preferred-font nil t)
-    (set-face-attribute 'default nil :height default-preferred-font-size)
+    (load-set-font "Roboto Mono Thin for Powerline" default-preferred-font-size)
     ;; hightlight modeline of active buffer
     (set-face-foreground 'mode-line "black")
     (set-face-background 'mode-line "green4")
     (set-face-background 'mode-line-inactive "grey20")
     (set-face-foreground 'mode-line-buffer-id "white")
+    (set-face-background hl-line-face "grey15")   ;; gotham
     ))
 
+(defun switch-to-dark-theme2 ()
+  (interactive)
+  (progn
+    ;; load selected theme
+    (load-theme-by-name 'gotham)
+    ;; set font
+    (load-set-font "Victor Mono" (+ 5 default-preferred-font-size))
+    ;; hightlight modeline of active buffer
+    (set-face-foreground 'mode-line "black")
+    (set-face-background 'mode-line "green4")
+    (set-face-background 'mode-line-inactive "grey20")
+    (set-face-foreground 'mode-line-buffer-id "white")
+    (set-face-background hl-line-face "grey15")   ;; gotham
+    ))
 
 (switch-to-dark-theme)
+;;(switch-to-dark-theme2)
 ;;(switch-to-light-theme)
 
 
