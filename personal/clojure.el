@@ -435,9 +435,22 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 ;;
 ;; aggressive-indent-mode
 ;;
-(prelude-require-package 'aggressive-indent)
-(require 'aggressive-indent)
-(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+;;(prelude-require-package 'aggressive-indent)
+;;(require 'aggressive-indent)
+;;(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+
+
+
+;;
+;; cljfmt on save
+;;
+(defun cljfmt ()
+  (when (or (eq major-mode 'clojure-mode)
+            (eq major-mode 'clojurescript-mode))
+    (shell-command-to-string (format "cljfmt fix %s --indents ~/.lein/cljfmt-indents.clj --no-remove-surrounding-whitespace --no-remove-consecutive-blank-lines" buffer-file-name))
+    (revert-buffer :ignore-auto :noconfirm)))
+
+(add-hook 'after-save-hook #'cljfmt)
 
 
 
