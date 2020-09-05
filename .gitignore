@@ -31,3 +31,4 @@ prelude-cheatsheet.log
 /latex-math-preview-cache/
 /transient/
 /.mc-lists.el
+/forge-database.sqlite
