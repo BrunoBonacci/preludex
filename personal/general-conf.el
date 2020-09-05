@@ -249,6 +249,14 @@
 (setq magit-push-always-verify nil)
 
 
+
+;;
+;; Install forge
+;;
+(prelude-require-package 'forge)
+
+
+
 ;;
 ;; ERC - irc
 ;;
